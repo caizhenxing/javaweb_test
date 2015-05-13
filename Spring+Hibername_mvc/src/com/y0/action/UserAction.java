@@ -37,6 +37,6 @@ public class UserAction {
 	
 	public String login() {
 		
-		return "login";
+		return "list";
 	}
 }
