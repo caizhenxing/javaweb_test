@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context 
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<!--启用注解-->
+	<context:annotation-config />
+	<!--数据源-->
+	<context:property-placeholder location="classpath:jdbc.properties" />
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${driverClassName}" />
+		<property name="url" value="${url}" />
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" />
+		<property name="initialSize" value="${initialSize}" />
+		<property name="maxActive" value="${maxActive}" />
+	</bean>
+
+	<!--hibernate config-->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mappingResources">
+			<value>com/y0/bean/User.hbm.xml</value>
+		</property>
+		<property name="hibernateProperties">
+			<value>
+				hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+				hibernate.hbm2ddl.auto=update
+				hibernate.show_sql=true
+				hibernate.format_sql=false
+				hibernate.cache.use_second_level_cache=true
+				hibernate.cache.use_query_cache=false
+				hibernate.cache.provider_class=org.hibernate.cache.EhCacheProvider
+			</value>
+		</property>
+	</bean>
+
+	<!--transactionManager config-->
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<!--制定被该事务管理的对象-->
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!--启用事务的注解支持-->
+	<tx:annotation-driven transaction-manager="txManager" />
+	
+	<bean id="userService" class="com.y0.service.impl.UserServiceBean"/>
+	
+</beans>

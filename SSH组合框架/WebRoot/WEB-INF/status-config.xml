@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="userBean" type="com.y0.formbean.UserForm" />
+	</form-beans>
+	<action-mappings>
+
+		<!--	用户列表的界面动作配置	-->
+		<action path="/user/users" validate="false">
+			<forward name="user" path="/user.jsp" />
+		</action>
+		<action path="/user/manager" parameter="method" validate="false" scope="request"
+			name="userBean">
+			<forward name="tip" path="/tip.jsp"></forward>
+		</action>
+	</action-mappings>
+
+	<!--表单数据	-->
+
+	<controller>
+		<set-property property="processorClass"
+			value="org.springframework.web.struts.DelegatingRequestProcessor" />
+	</controller>
+</struts-config>

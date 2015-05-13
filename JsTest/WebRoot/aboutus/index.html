@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta name="description" content="" />
+<link type="text/css" href="images/main.css" rel="stylesheet">
+<title>关于我们</title>
+</head>
+
+<body>
+<div class="swiper-container">
+  <section class="u-arrow" style="display:none;">
+    <p class="css_sprite01"></p>
+  </section>
+  
+  <!--    <audio loop="loop" id="media" autoplay="autoplay" preload="preload" src="images/music.mp3"></audio>-->
+  <div class="swiper-wrapper"> 
+    
+    <!-- <div class="swiper-slide slide-1">
+      <div class="tac imgbox">
+       
+      </div>
+    </div>
+    <div class="swiper-slide slide-2">
+   
+    </div>
+    <div class="swiper-slide slide-3">
+     
+    </div>
+    <div class="swiper-slide slide-4">
+     
+    </div>-->
+    <div class="swiper-slide slide-5">
+       <div class="s5-box">
+        <div class="s5-cir1"></div>
+        <div class="s5-cir2"></div>
+         <div class="s5-cir3"></div>
+         <div class="s5-earth"></div>
+         <div class="s5-place"></div>
+        <div class="s5-word">
+          <dl>
+            <dt>2014年9月19日</dt>
+            <dd>中投在线股份有限公司正式成立</dd>
+            <dd class="ddx">全面对接上海川茂资产管理有限公司的线下业务和客户资源</dd>
+          </dl>
+        </div>
+        <div class="s5-money"></div>
+        <div class="s5-cloud1"></div>
+        <div class="s5-cloud2"></div>
+        <div class="s5-cloud3"></div>
+      </div>
+    </div>
+    <div class="swiper-slide slide-6">
+    	<div class="s6-box">
+        	<div class="s6-desk"></div>
+        	<div class="s6-per1"></div>
+            <div class="s6-per2"><span class="s6-hand"></span></div>
+            <div class="s6-word">
+            	<dl>
+                    <dt>2014年10月</dt>
+                    <dd><span class="f24">中投在线财富俱乐部成立</span><br> 定期举行高端俱乐部会员活动，提供全方位的增值服务。</dd>
+                  </dl>
+            </div>
+        </div>
+	
+    </div>
+    <div class="swiper-slide slide-7">
+       <div class="s7-box">
+            <div class="s7-hand"></div>
+            <div class="s7-cup"></div>
+            <div class="s7-cctv"></div>
+            <div class="s7-line"></div>
+            <div class="s7-txt">
+            	<dl>
+                <dt>2015年1月</dt>
+                <dd>在“中国投资界的奥斯卡”第四届中国投资者大会上<br>中投在线荣获CCTV证券资讯频道颁发的<dd>
+                <dd class="f24">“<strong class="colye">最佳金融服务机构</strong>”奖项重磅上线</dd>
+              </dl>
+            </div>
+        </div>
+     </div>
+      
+    <div class="swiper-slide slide-8">
+      <div class="s8-box">
+        <div class="s8-cir1"></div>
+        <div class="s8-cir2"></div>
+        <div class="s8-word">
+          <dl>
+            <dt>2014年9月19日</dt>
+            <dd><strong class="f24">中投在线</strong> 重金砸下价值数亿的顶级域名<br>
+              全新网站<strong class="f24 colblue"> www.touzi.com </strong>重磅上线</dd>
+          </dl>
+        </div>
+        <div class="s8-star1"></div>
+        <div class="s8-star2"></div>
+        <div class="s8-notebook">
+          <p class="s8-notecontent"></p>
+        </div>
+        <div class="s8-orbit"></div>
+        <div class="s8-rocket"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script language="javascript" src="images/jquery-1.10.1.min.js"></script> 
+<script language="javascript" src="images/idangerous.swiper.min.js"></script> 
+<script>
+$(function(){	
+	
+	 
+	
+var arrowShow = function(){$('.u-arrow').fadeIn();}
+setTimeout(arrowShow,500);
+  var mySwiper = new Swiper('.swiper-container',{
+    mode: 'vertical'
+	,preloadImages:true
+	,onSlideChangeEnd:function(event, index, elem){
+		var i = event.activeIndex;
+		if(i<7){$('.u-arrow').fadeIn();}				
+	}
+	,onSlideChangeStart:function(event, index, elem){
+		$('.u-arrow').fadeOut();
+	}
+  }) 
+})
+
+var browser = {
+versions: function() {
+var u = navigator.userAgent, app = navigator.appVersion;
+return {//移动终端浏览器版本信息 
+trident: u.indexOf('Trident') > -1, //IE内核
+presto: u.indexOf('Presto') > -1, //opera内核
+webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //是否为移动终端
+ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+iPad: u.indexOf('iPad') > -1, //是否iPad
+webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+};
+}(),
+language: (navigator.browserLanguage || navigator.language).toLowerCase()
+}
+
+if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) {
+	$('#ewmtip').hide();
+}
+
+
+
+</script>
+</body>
+</html>

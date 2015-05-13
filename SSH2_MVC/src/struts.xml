@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!--后缀名-->
+	<constant name="struts.action.extension" value="do,action" />
+
+	<!--	默认编码集	-->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+
+	<!-- 设置浏览器是否缓存静态内容  ，默认值为true（生产环境下使用）开发阶段最好关闭 -->
+	<constant name="struts.serve.static.bowserCache" value="false" />
+
+	<!-- 当struts配置文件修改时是否自动加载 -->
+	<constant name="struts.configuration.xmlreload" value="true" />
+
+	<!-- 开发模式下打印详细的错误信息 -->
+	<constant name="struts.devMode" value="true" />
+
+	<!-- 默认的试图主题 -->
+	<constant name="struts.ui.theme" value="simple" />
+
+	<!--与spring集成时设置由spring来创建action的对像-->
+	<constant name="struts.objectFactory" value="spring" />
+
+	<package name="user" namespace="/user" extends="struts-default">
+		<global-results>
+			<!--global message-->
+			<result name="msg">/WEB-INF/page/msg.jsp</result>
+		</global-results>
+		<action name="action_*" class="userAction" method="{1}">
+			<result name="list">/WEB-INF/page/list.jsp</result>
+			<result name="addview">/WEB-INF/page/add.jsp</result>
+			<result name="login">/WEB-INF/page/login.jsp</result>
+			<result name="detail">/WEB-INF/page/detail.jsp</result>
+		</action>
+	</package>
+
+
+</struts>    

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="//psf/Home/Desktop/2015.3.17/框架学习/spring2.5/源代码/lib/spring2.5.6/commons-logging.jar"/>
+	<classpathentry kind="lib" path="//psf/Home/Desktop/2015.3.17/框架学习/spring2.5/源代码/lib/spring2.5.6/spring.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="//psf/Home/Desktop/2015.3.17/框架学习/spring2.5/源代码/lib/spring2.5.6/aspectjrt.jar"/>
+	<classpathentry kind="lib" path="//psf/Home/Desktop/2015.3.17/框架学习/spring2.5/源代码/lib/spring2.5.6/aspectjweaver.jar"/>
+	<classpathentry kind="lib" path="//psf/Home/Desktop/2015.3.17/框架学习/spring2.5/源代码/lib/spring2.5.6/cglib-nodep-2.1_3.jar"/>
+	<classpathentry kind="lib" path="//psf/Home/Desktop/2015.3.17/框架学习/spring2.5/源代码/lib/spring2.5.6/common-annotations.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

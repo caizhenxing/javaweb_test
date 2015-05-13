@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Spring+Hibername_mvc"
+  id="myeclipse.1427472958484"
+  context-root="/SSH"
+  j2ee-spec="5.0"
+  archive="Spring+Hibername_mvc.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
