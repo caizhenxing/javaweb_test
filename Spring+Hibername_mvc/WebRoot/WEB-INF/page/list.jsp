@@ -8,7 +8,7 @@
 			content="text/html; charset=ISO-8859-1">
 		<title>用户列表</title>
 	</head>
-	<body>
+	<body background="../assets/img/009_47.jpg">
 		<center>
 			所有的用户:
 			<br />
@@ -34,28 +34,28 @@
 						操作
 					</td>
 				</tr>
-				<c:iterator value="users">
+				<c:forEach items="${users}" var="user">
 					<tr>
 						<td>
-							<c:property value="id" />
+							${user.id}
 						</td>
 						<td>
-							<c:property value="userName" />
+							${user.userName}
 						</td>
 						<td>
-							<c:property value="password" />
+							${user.password}
 						</td>
 						<td>
-							<c:property value="nickName" />
+							${user.nickName}
 						</td>
 						<td>
-							<c:property value="email" />
+							${user.email}
 						</td>
 						<td>
-							<a href="action_del.do?user.id=<c:property value="id"/>">删除</a>
+							<a href="del.do?id=${user.id}">删除</a>
 						</td>
 					</tr>
-				</c:iterator>
+				</c:forEach>
 			</table>
 
 		</center>

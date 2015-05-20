@@ -8,7 +8,7 @@
 		<id name="id" type="integer">
 			<generator class="native" />
 		</id>
-		<property name="userName" length="32" not-null="true"/>
+		<property name="userName" length="32" not-null="true" unique="true"/>
 		<property name="password" length="64" not-null="true"/>
 		<property name="nickName" length="16" not-null="false"/>
 		<property name="email" length="64" not-null="true"/>

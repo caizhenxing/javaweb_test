@@ -15,6 +15,7 @@ import com.y0.service.UserService;
 
 
 @Controller
+@RequestMapping("/user")
 public class UserAction {
 
 	/**
@@ -28,15 +29,58 @@ public class UserAction {
 	 * @param rsp 响应
 	 * @return 视图名字
 	 */
-	@RequestMapping("userList")
-	public ModelAndView name(HttpServletRequest req, HttpServletResponse rsp) {
+	@RequestMapping("/list")
+	public String users(HttpServletRequest req, HttpServletResponse rsp) {
 		List<User> user = userService.userList();
-		req.setAttribute("user", user);
-		return new ModelAndView("WEB-INF/user");
+		req.setAttribute("users", user);
+		return "WEB-INF/page/list";
 	}
 	
-	public String login() {
+	/**
+	 * 登陆视图
+	 * @param req
+	 * @param rsp
+	 * @return
+	 */
+	@RequestMapping("/regView") 
+	public String loginView(HttpServletRequest req, HttpServletResponse rsp) {
 		
-		return "list";
+		return "WEB-INF/page/add";
 	}
+	
+	/**
+	 * 删除用户
+	 * @param id
+	 * @param req
+	 * @param rsp
+	 * @return
+	 */
+	@RequestMapping("/del") 
+	public String del(HttpServletRequest req, HttpServletResponse rsp) {
+		
+		String idStr = req.getParameter("id");
+		int id = Integer.parseInt(idStr);
+		userService.delete(id);
+		System.out.println("del complete !");
+		req.setAttribute("msg", "del success !");
+		return "WEB-INF/page/msg";
+	}
+	
+	/**
+	 *	注册用户
+	 * @param id
+	 * @param req
+	 * @param rsp
+	 * @return
+	 */
+	@RequestMapping("/reg") 
+	public String reg(User user, HttpServletRequest req, HttpServletResponse rsp) {
+		
+		System.out.println("will addition NickName!" + user.getNickName());
+		userService.save(user);
+		
+		req.setAttribute("msg", "addition success !");
+		return "WEB-INF/page/msg";
+	}
+	
 }

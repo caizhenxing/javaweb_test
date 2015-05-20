@@ -8,18 +8,18 @@
 			content="text/html; charset=ISO-8859-1">
 		<title>添加用户</title>
 	</head>
-	<body background="../assets/img/008_36.jpg">
+	<body background="../assets/img/009_47.jpg">
 		<CENTER>
 			添加用户
 			<br />
 			<div align="center">
-			<c:form action="action_add" namespace="/user">
-				<input name="user.userName" placeholder="用户名"/><br />
-				<input name="user.nickName" placeholder="昵称"/><br />
-				<input name="user.password" placeholder="密码" /><br />
-				<input type="text" name="user.email" placeholder="Email"/><br />
+			<form action="reg" method="post" >
+				<input name="userName" placeholder="用户名"/><br />
+				<input name="nickName" placeholder="昵称"/><br />
+				<input type="password" name="password" placeholder="密码" /><br />
+				<input type="text" name="email" placeholder="Email"/><br />
 				<input type="submit" value="添加" title="添加用户"/>
-			</c:form>
+			</form>
 			</div>
 		</CENTER>
 	</body>

@@ -13,12 +13,11 @@
 			登陆
 			<br />
 			<div align="center">
-			<c:property value="msg"/>
-			<c:form action="action_login" namespace="/user">
+			<form action="action_login">
 				<input name="user.userName" placeholder="用户名"/><br />
 				<input name="user.password" type="password" placeholder="密码" /><br />
 				<input type="submit" value="登陆" title="登陆"/>
-			</c:form>
+			</form>
 			</div>
 		</CENTER>
 	</body>
