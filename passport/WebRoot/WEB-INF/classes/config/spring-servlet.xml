@@ -12,7 +12,7 @@
 	<!--配置例外-->
 	<mvc:resources location="/assets/" mapping="/assets/**" />
 	<!--注解扫描包-->
-	<context:component-scan base-package="com.y0.action"></context:component-scan>
+	<context:component-scan base-package="com.passport.action"></context:component-scan>
 	<!--寻找方法	-->
 	<mvc:annotation-driven />
 	<!--	<bean-->

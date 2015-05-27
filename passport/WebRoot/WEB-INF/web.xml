@@ -4,24 +4,10 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-	<!--编码过滤器-->
-	<filter>
-		<filter-name>Spring character encoding filter</filter-name>
-		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-		<init-param>
-			<param-name>encoding</param-name>
-			<param-value>utf-8</param-value>
-		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>Spring character encoding filter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-
 	<!--配置加载Spring容器路径-->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:config/appCtx.xml</param-value>
+		<param-value>classpath:config/beans.xml</param-value>
 	</context-param>
 	<!--实例化Spring容器-->
 	<listener>
@@ -40,8 +26,22 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>springMVC</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
+
+	<!--编码过滤器-->
+	<filter>
+		<filter-name>Spring character encoding filter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>Spring character encoding filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>

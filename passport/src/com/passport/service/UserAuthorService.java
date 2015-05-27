@@ -1,6 +1,7 @@
 package com.passport.service;
 
-public class UserAuthorService {
-
+public interface UserAuthorService {
 	
+	public abstract void add();
+
 }
