@@ -46,9 +46,7 @@ public class UserMgrServiceImpl implements UserMgrService {
 		Session s = sessionFactory.getCurrentSession();
 		Query q = s.createQuery("from Account where userName=:userName");
 		q.setString("userName", userName);
-		
 		List l = q.list();
-		
 		return (Account) (l.size() > 0 ? l.get(0) : null);
 	}
 }

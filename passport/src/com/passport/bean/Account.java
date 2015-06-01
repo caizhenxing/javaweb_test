@@ -21,7 +21,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "account_basic", uniqueConstraints = { @UniqueConstraint(columnNames = {
-		"userName", "email" }) })
+		"userName" }) })
 public class Account {
 
 	@Id

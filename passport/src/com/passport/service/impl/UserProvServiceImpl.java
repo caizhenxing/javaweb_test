@@ -39,6 +39,10 @@ public class UserProvServiceImpl implements UserProvService {
 		Query q = s.createQuery("from Account where userName=:userName");
 		q.setString("userName", userName);
 		List<Account> l = q.list();
+		if (l.size() < 1) {
+			
+			return null;
+		}
 		Account user = l.get(0);
 		if (user.getPassword().equals(psw)) {
 			return user;
@@ -70,7 +74,7 @@ public class UserProvServiceImpl implements UserProvService {
 		} catch (ConstraintViolationException e) {
 			
 			System.out.println("Î¥·´Ô¼ÊøÒì³£");
-			e.printStackTrace();
+			//e.printStackTrace();
 			ret = false;
 		} finally {
 			
