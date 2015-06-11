@@ -40,7 +40,7 @@
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="com.passport.bean" />
+		<property name="packagesToScan" value="com.book.domain" />
 		<property name="hibernateProperties">
 			<value>
 				hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
@@ -62,5 +62,7 @@
 	</bean>
 	<!--启用事务的注解支持-->
 	<tx:annotation-driven transaction-manager="txManager" />
-
+	
+	<bean id="bookService" class="com.book.service.impl.BookServiceImpl"/>
+	<bean id="contentService" class="com.book.service.impl.BookContentServiceImpl"/>
 </beans>
