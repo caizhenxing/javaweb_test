@@ -1,28 +1,36 @@
 ﻿//获取书
-function getBooks(off, len) {
+function getBooks(off, len, key) {
 
 	if (off < 0 || len == 0) {
 		alert("参数有误,请检查!");
 	}
 
 	var base_path = $("base").attr("href");
-	var url_ = base_path + "/book/books.do?off=" + off + "&len=" + len;
+	var url_ = base_path + "/book/books.do";//?off=" + off + "&len=" + len;
 	//alert('--:'+url);
 	//$.getJSON(url_,null, callback);
 
-	$.get(url_, callback);
+	//$.get(url_, callback);
 
+	var keyInput = $("#keyword");
+	key = keyInput.val();
+	$.post(url_, {
+		off : off,
+		len : len,
+		keyword : key
+	}, callback);
 }
+
 //行点击事件
 function cellClick(event) {
 
-	if (event.target.id=='ope'){
+	if (event.target.id == 'ope') {
 		return;
 	}
 	var td = event.currentTarget.children[3];
 	//alert('点了:'+td.textContent);
 	var base_path = $("base").attr("href");
-	location.href = 'bookContent/partview.do?bookid='+td.textContent;
+	location.href = 'bookContent/partview.do?bookid=' + td.textContent;
 }
 
 function callback(data) {
@@ -58,28 +66,31 @@ function callback(data) {
 		tdName.append(book.name);
 		tdOpe.append('编辑');
 		tdbid.append(book.bookid);
-		
+
 		tdbid.hide();
-		tdbid.attr('id','bookid');
-		tdId.attr('id','bid');
+		tdbid.attr('id', 'bookid');
+		tdId.attr('id', 'bid');
 		tdName.attr('id', 'name');
 		tdOpe.attr('id', 'ope');
-		
-		tdId.attr('width','10%');
-		tdOpe.attr('width','20%');
+
+		tdId.attr('width', '10%');
+		tdOpe.attr('width', '20%');
 		tmp.append(tdId);
 		tmp.append(tdName);
 		tmp.append(tdOpe);
 		tmp.append(tdbid);
-		
+
 		table.append(tmp);
 	}
 }
 
+/// html加载完成
 $(document).ready(function() {
 
 	function get() {
 		getBooks(0, 20);
+		var keyInput = $("#keyword");
+		keyInput.val("");
 	}
 	get();
 	//上一页
@@ -99,5 +110,18 @@ $(document).ready(function() {
 					getBooks(parseInt(off.val(), 10) + parseInt(len.val(), 10),
 							parseInt(len.val(), 10));
 				});
+		// 给表添加点击事件
 		$("#book_list_table").on('click', '#book_cell', cellClick);
+
+		// 搜索
+		$("#book_search").click(function(event) {
+			var len = $("#len");
+			var keyInput = $("#book_search_key");
+			
+			var keyword = $("#keyword");
+			keyword.val(keyInput.val());
+			getBooks(0, parseInt(len.val(), 10));
+			$("#book_search").attr("disabled", false);
+		});
+
 	});

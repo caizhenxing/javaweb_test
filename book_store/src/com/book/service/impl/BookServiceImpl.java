@@ -39,7 +39,8 @@ public class BookServiceImpl implements BookService {
 	public List<Book> bookList(CutInput pageInfo) {
 		Session s = sessionFactory.getCurrentSession();
 		Query qCount = s.createQuery("select count(*) from Book");
-		Query q = s.createQuery("from Book");
+		String key = pageInfo.getKeyword() == null ? "" : pageInfo.getKeyword();
+		Query q = s.createQuery("from Book where name like '%" +key+"%'");
 		List<Long> counts = qCount.list();
 		Long count = counts.get(0);
 		q.setFirstResult(pageInfo.getOff());
@@ -88,17 +89,23 @@ public class BookServiceImpl implements BookService {
 				for (int i = 0; i < subFiles.length; i++) {
 					File subFile = subFiles[i];
 					if (subFile.isFile()) {
-						Book newBook = new Book();
-
-						newBook.setName(subFile.getName());
-						newBook.setSize(subFile.length());
-						newBook.setPath(subFile.getPath());
 						String md5 = "";
 						try {
 							md5 = LocalOperationService.getMd5ByFile(subFile);
+							boolean isExist = checkExist(md5);
+							if (isExist)
+							{
+								System.out.println("已添加");
+								continue;
+							}
 						} catch (FileNotFoundException e) {
 							System.out.println("文件不存在");
 						}
+						
+						Book newBook = new Book();
+						newBook.setName(subFile.getName());
+						newBook.setSize(subFile.length());
+						newBook.setPath(subFile.getPath());
 						newBook.setMd5(md5);
 						newBook.setAuthor("n/a");
 						newBook.setCarrier("admin");
@@ -116,6 +123,7 @@ public class BookServiceImpl implements BookService {
 					}
 				}
 				System.out.println("结束更新");
+				BookServiceImpl.this.update = false;
 			}
 		}).run();
 	}
@@ -126,4 +134,10 @@ public class BookServiceImpl implements BookService {
 		session.persist(book);
 	}
 
+	private boolean checkExist(String md5) {
+		Session session = sessionFactory.getCurrentSession();
+		Query q = session.createQuery("from Book where md5=:md5");
+		q.setString("md5", md5);
+		return q.list().size() != 0;
+	}
 }

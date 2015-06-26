@@ -32,15 +32,25 @@
 			<form>
 				<input id="len" type="hidden" name="len" value="${page.len}">
 				<input id="off" type="hidden" name="off" value="${page.off}">
+				<input id="keyword" type="hidden" name="keyword" value="">
 				<input id="basePath" type="hidden" value="<%=basePath%>" />
 			</form>
 		</div>
 		<center>
-			<div style="width:98%">
+			<div style="width: 98%">
 				<h1>
 					所有的书
 				</h1>
 				<br>
+				<div>
+					<form>
+
+						<input type="text" id="book_search_key" placeholder="按书名搜索">
+						<input type="button" value="搜索" id="book_search">
+
+					</form>
+
+				</div>
 				<table id="book_list_table" class="hovertable" width="100%">
 					<th>
 						ID

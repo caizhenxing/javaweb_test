@@ -13,7 +13,14 @@ public class CutInput
 	private int len;
 	private int totalLen;
 	private boolean end;
+	private String keyword;
 	
+	public String getKeyword() {
+		return keyword;
+	}
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
 	public boolean isEnd() {
 		return end;
 	}

@@ -1,11 +1,11 @@
-ï»¿function getContent(page, dump) {
+function getContent(page, dump) {
 
 	var len = $("#len");
 	var bookid = $("#bookid");
 	var off = $("#off");
 
 	if (off < 0 || len == 0) {
-		alert("å‚æ•°æœ‰è¯¯,è¯·æ£€æŸ¥!");
+		alert("²ÎÊýÓÐÎó,Çë¼ì²é!");
 	}
 
 	var l = parseInt(len.val());
@@ -21,7 +21,7 @@
 	var base_path = $("base").attr("href");
 	var url = base_path + "bookContent/part.do?bookId=" + bookid.val()
 			+ "&len=" + l + "&off=" + o + "&client=1";
-	//window.alert("ä¹¦id:"+bookid+ "èµ·ç‚¹:" + off+" é•¿åº¦:"+len +"url"+url);
+	//window.alert("Êéid:"+bookid+ "Æðµã:" + off+" ³¤¶È:"+len +"url"+url);
 	$.get(url, function(data, status) {
 		var d = data.replace(/&#034;/g, "\"");
 		d = d.replace(/[\r\n]/g, "");
