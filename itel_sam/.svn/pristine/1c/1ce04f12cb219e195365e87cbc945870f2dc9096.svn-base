@@ -1,0 +1,46 @@
+package com.itel.dao.impl;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.itel.dao.ISamAuthorDao;
+import com.itel.dao.utils.BaseDao;
+import com.itel.domain.SamAuthor;
+
+@Repository
+public class ISamAuthorDaoImpl implements ISamAuthorDao {
+	
+	private final Logger logger = Logger.getLogger(ISamAuthorDaoImpl.class);
+	@Autowired
+	private BaseDao baseDao;
+	
+	@Override
+	public SamAuthor getSamAuthorByPitel2Uitel(SamAuthor samAuthor) {
+		String queryAuthorSql  = "  from SamAuthor where varPitel=? and varUitel=?";
+		List list = null;
+		try {
+			 list = this.baseDao.findByHql(queryAuthorSql, new Object[]{samAuthor.getVarPitel(), samAuthor.getVarUitel()});
+//			num = this.baseDao.countBySql(queryAuthorSql, new Object[]{samAuthor.getVarPitel(), samAuthor.getVarUitel());
+		} catch (Exception e1) {
+			
+			logger.debug("Sorry,System  queryAuthorSql Exception:sql :"+queryAuthorSql);
+			e1.printStackTrace();
+		}
+		if (list!=null&&list.size()> 0) 
+			return (SamAuthor) list.get(0);
+		return null;
+	}
+
+	@Override
+	public void saveSamAuthor(SamAuthor samAuthor) {
+		this.baseDao.save(samAuthor);
+	}
+}

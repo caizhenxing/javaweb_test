@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="/common/taglibs.jsp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<%@ include file="/common/extlibs.jsp" %>
+<title>监控后台控制台</title>
+</head>
+<body>
+ 
+ 
+<script type="text/javascript" src="${cts}/javascript/ext-sx/grid/Status.js"></script>
+<script language="javascript">
+</script>
+
+<script type="text/javascript" src="${cts}/javascript/ext-sx/grid/MonitorMain.js"></script>
+<script type="text/javascript" src="${cts}/javascript/ext-sx/grid/NewPanel.js"></script>
+<script type="text/javascript" src="${cts}/javascript/ext-sx/grid/DeviceManager.js"></script>
+<script type="text/javascript" src="${cts}/javascript/ext-sx/grid/UpgradePanel.js"></script>
+<script type="text/javascript" src="${cts}/javascript/ext-sx/grid/AndrodHelpCenterPanel.js"></script>
+<script type="text/javascript" src="${cts}/javascript/ext-sx/grid/IOSHelpCenterPanel.js"></script>
+<script type="text/javascript" src="${cts}/javascript/ext-sx/grid/SamDeviceManager.js"></script>
+<div id="tree-div"></div>
+<div id="fi-form" style="display:none"></div>
+</body>
+</html>

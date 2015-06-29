@@ -1,0 +1,48 @@
+package com.itel.dao.impl;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.stereotype.Repository;
+
+import com.itel.dao.ISamUpgradeDao;
+import com.itel.dao.utils.BaseDao;
+import com.itel.domain.SamUpgrade;
+@Repository
+public class ISamUpgradeDaoImpl implements ISamUpgradeDao {
+	private final Logger logger = Logger.getLogger(ISamUpgradeDaoImpl.class);
+	@Autowired
+	private BaseDao baseDao;
+
+	@Override
+	public List<SamUpgrade> getLastVersion(final SamUpgrade samUpgrade) {
+		final String hql = " from SamUpgrade where platform=? order by pubtime desc limit 0,1";
+//		return this.baseDao.findByHql(hql, new Object[]{samUpgrade.getPlatform()});
+		List list = this.baseDao.getHibernateTemplate().executeFind(
+				new HibernateCallback() {
+					public Object doInHibernate(final Session session)
+							throws HibernateException, SQLException {
+						final Query query = session.createQuery(hql);
+						query.setString(0, samUpgrade.getPlatform());
+						query.setFirstResult(0);
+						query.setMaxResults(1);
+						return query.list();
+					}
+				});
+		
+		return list;
+	}
+
+	@Override
+	public void saveSamUpgrade(SamUpgrade samUpgrade) {
+		this.baseDao.save(samUpgrade);
+		
+	}
+
+}

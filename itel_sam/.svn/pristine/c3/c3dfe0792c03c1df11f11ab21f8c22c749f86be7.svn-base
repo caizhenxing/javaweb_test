@@ -1,0 +1,19 @@
+package com.itel.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.itel.dao.ISamPushDao;
+import com.itel.domain.SamPush;
+import com.itel.service.ISamPushService;
+@Service
+public class ISamPushServiceImpl implements ISamPushService {
+	@Autowired
+	private ISamPushDao iSamPushDao;
+	
+	@Override
+	public void saveSamPush(SamPush samPush) {
+		this.iSamPushDao.saveSamPush(samPush);
+	}
+
+}

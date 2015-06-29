@@ -1,0 +1,11 @@
+package com.itel.dao;
+
+import com.itel.domain.SamAuthor;
+
+public interface ISamAuthorDao {
+	
+	SamAuthor getSamAuthorByPitel2Uitel(SamAuthor samAuthor);
+	
+	void saveSamAuthor(SamAuthor samAuthor);
+	 
+}

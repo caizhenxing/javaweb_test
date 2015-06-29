@@ -1,0 +1,21 @@
+package com.itel.utils;
+
+public class Constants {
+	
+	//通知推送
+	public static final String PUSH_Notification = "PUSH_Notification";
+	
+	//消息推送
+	public static final String PUSH_Message = "PUSH_Message";
+	
+	private static final String PUSH_AllPlatForm = "";
+	
+	//安卓平台
+	public static final String PUSH_AndroidPlatForm = "PUSH_AndroidPlatForm";
+	
+	//版本发布-安卓平台
+	public static final String PlatForm_Android = "Android";
+	//版本发布-IOS平台
+	public static final String PlatForm_IOS = "IOS";
+
+}

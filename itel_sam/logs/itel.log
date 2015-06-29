@@ -1,0 +1,5 @@
+2014-08-25 09:59:20:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-08-25 09:59:44:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-08-25 10:00:27:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-08-25 10:01:09:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-08-25 10:01:22:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.

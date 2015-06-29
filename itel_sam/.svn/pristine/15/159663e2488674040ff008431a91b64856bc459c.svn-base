@@ -1,0 +1,50 @@
+package com.sun.test;
+
+import java.io.IOException;
+
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpException;
+import org.apache.commons.httpclient.NameValuePair;
+import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.methods.PostMethod;
+import org.junit.Before;
+import org.junit.Test;
+
+public class CloudCommunityTest {
+	private HttpClient client = null;
+	private GetMethod getMethod = null;
+	private PostMethod postMethod = null;
+	private final String url = "http://192.168.1.9:8080/CloudCommunity/";
+
+	@Before
+	public void init() {
+		client = new HttpClient();
+	}
+	@Test
+	public void validateAccount(){
+		postMethod = new PostMethod(url + "register/registerSubmitByJson.json");
+		try {
+			postMethod.setRequestHeader("Accept", "application/json");
+			postMethod.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			NameValuePair[] list = new NameValuePair[] {
+					new NameValuePair("itelCode", "1233211"),//用户itel号码
+					new NameValuePair("type", "0"),//个人手机验证号码
+					new NameValuePair("phone", "186"),//用户密码
+					new NameValuePair("password", "000000")
+					};
+			postMethod.setQueryString(list);
+			postMethod.setRequestBody(list);
+//			postMethod.addParameters(list);
+			int state = client.executeMethod(postMethod);
+			System.out.println("state:" + state);
+			String result = postMethod.getResponseBodyAsString();
+			System.out.println(result);
+		} catch (HttpException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	
+		
+	}
+}

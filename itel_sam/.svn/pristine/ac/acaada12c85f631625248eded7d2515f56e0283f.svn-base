@@ -1,0 +1,82 @@
+package com.itel.dao.impl;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.itel.dao.ISamAuthorDao;
+import com.itel.dao.utils.BaseDao;
+import com.itel.domain.SamAuthor;
+
+@Repository
+public class ISamAuthorDaoImpl implements ISamAuthorDao {
+
+	private final Logger logger = Logger.getLogger(ISamAuthorDaoImpl.class);
+	@Autowired
+	private BaseDao baseDao;
+
+	/**
+	 * 通过产品itel号以及用户itel号获取授权信息
+	 */
+	@Override
+	public SamAuthor getSamAuthorByPitel2Uitel(SamAuthor samAuthor) {
+		String queryAuthorSql = "  from SamAuthor where varPitel=? and varUitel=?";
+		List list = null;
+		try {
+			list = this.baseDao.findByHql(queryAuthorSql, new Object[] {
+					samAuthor.getVarPitel(), samAuthor.getVarUitel() });
+		} catch (Exception e1) {
+
+			logger.debug("Sorry,System  queryAuthorSql Exception:sql :"
+					+ queryAuthorSql);
+			e1.printStackTrace();
+		}
+		if (list != null && list.size() > 0)
+			return (SamAuthor) list.get(0);
+		return null;
+	}
+
+	@Override
+	public void saveSamAuthor(SamAuthor samAuthor) {
+		this.baseDao.save(samAuthor);
+	}
+
+	/**
+	 * 删除授权信息
+	 */
+	@Override
+	public void deleteSamAuthor(SamAuthor samAuthor) {
+		String sql = " delete from itel_sam_author where var_pitel=? and var_uitel=?";
+		this.baseDao.execBySql(sql, new Object[] { samAuthor.getVarPitel(),
+				samAuthor.getVarUitel() });
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<SamAuthor> getAuthorListByPitel(SamAuthor samAuthor) {
+		String hql = " from SamAuthor where varPitel=? and avtive=?";
+		return (List<SamAuthor>) this.baseDao.findByHql(hql,
+				new Object[] { samAuthor.getVarPitel(),samAuthor.getActive() });
+	}
+
+	@Override
+	public void modifySamAuthorActive(SamAuthor samAuthor) {
+		String sql = " update itel_sam_author set active=? where var_pitel=? and var_uitel=?";
+		this.baseDao.execBySql(sql, new Object[] { samAuthor.getActive(),samAuthor.getVarPitel(),
+				samAuthor.getVarUitel() });
+	}
+
+	@Override
+	public void updateSamAuthor(SamAuthor samAuthor) {
+		String sql = " update itel_sam_author set var_backname=? where var_pitel=? and var_uitel=? ";
+		this.baseDao.execBySql(sql, new Object[] { samAuthor.getBackName(),samAuthor.getVarPitel(),
+				samAuthor.getVarUitel() });
+	}
+}

@@ -1,0 +1,8 @@
+package com.itel.dao;
+
+import com.itel.domain.LoginAccount;
+
+public interface LoginAccountDao {
+	
+	public LoginAccount queryloginAccount(LoginAccount loginAccount);
+}

@@ -1,0 +1,4 @@
+<sitemesh>
+    <!-- 因JS冲突，过滤掉用AJAX方式查询的页面 -->
+    <mapping path="//admin/demo/demoList.jhtml" exclue="true"></mapping>
+</sitemesh>

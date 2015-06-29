@@ -1,0 +1,16 @@
+package com.itel.dao;
+
+import java.util.List;
+
+import com.itel.dao.utils.QueryCondition;
+import com.itel.domain.SamUpgrade;
+
+public interface ISamUpgradeDao {
+	
+	public List<SamUpgrade> getLastVersion(SamUpgrade samUpgrade);
+	
+	public void saveSamUpgrade(SamUpgrade samUpgrade);
+	
+	public List<SamUpgrade> getVersionAll(QueryCondition queryCondition);
+
+}

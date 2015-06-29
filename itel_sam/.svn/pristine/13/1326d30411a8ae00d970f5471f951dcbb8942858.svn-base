@@ -1,0 +1,18 @@
+package com.itel.dao;
+
+import java.util.List;
+
+import com.itel.domain.SamDevice;
+public interface ISamDeviceDao {
+	
+	SamDevice getSamDeviceById(SamDevice samDevice);
+	
+	
+	public void saveSamDevice(SamDevice samDevice);
+	public void updateSamDevice(SamDevice samDevice);
+	public boolean deleteSamDevice(SamDevice samDevice);
+	public SamDevice querySamDevice(SamDevice samDevice);
+	public SamDevice querySamDeviceById(String id);
+	public List<SamDevice> queryAllSamDevice();
+
+}

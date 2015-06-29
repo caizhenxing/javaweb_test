@@ -1,0 +1,24 @@
+package com.itel.dao;
+
+import java.util.List;
+
+import com.itel.domain.SamAuthor;
+
+public interface ISamAuthorDao {
+	
+	SamAuthor getSamAuthorByPitel2Uitel(SamAuthor samAuthor);
+	
+	void saveSamAuthor(SamAuthor samAuthor);
+	
+	void deleteSamAuthor(SamAuthor samAuthor);
+	
+	//通过产品itel号查询绑定信息
+	List<SamAuthor> getAuthorListByPitel(SamAuthor samAuthor);
+	
+	//设备拥有者主动绑定用户,该用户可能在之前已经主动添加已存在设备,所以在此只需要修改active字段
+	void modifySamAuthorActive(SamAuthor samAuthor);
+	
+	//修改绑定用户信息
+	void updateSamAuthor(SamAuthor samAuthor);
+	 
+}

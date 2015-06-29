@@ -1,0 +1,21 @@
+package com.itel.web.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.itel.domain.SamPush;
+import com.itel.tools.ControllerSupport;
+
+@Controller
+public class SamPushController extends ControllerSupport<SamPush>{
+
+	@Override
+	public ModelAndView add(SamPush entity) {
+		return super.add(entity);
+	}
+	
+	
+	
+	
+
+}

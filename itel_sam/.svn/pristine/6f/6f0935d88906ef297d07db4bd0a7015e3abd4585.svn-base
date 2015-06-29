@@ -1,0 +1,9 @@
+package com.itel.dao;
+
+import com.itel.domain.SamPushMsg;
+
+public interface ISamPushMsgDao {
+	
+	public void saveSamPushMsg(SamPushMsg samPushMsg);
+
+}

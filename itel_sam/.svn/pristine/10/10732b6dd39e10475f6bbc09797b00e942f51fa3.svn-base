@@ -1,0 +1,148 @@
+package com.itel.domain;
+
+import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "itel_sam_device")
+public class SamDevice implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
+	@Column(name = "var_pitel")
+	private String varPitel;
+	@Column(name = "var_type")
+	private String varType;
+	@Column(name = "var_title")
+	private String varTitle;
+	@Column(name = "var_deviceid")
+	private String varDeviceId;
+	@Column(name = "var_password")
+	private String varPassWord;
+	@Column(name = "date_regtime")
+	private String dateRegTime;
+	@Column(name = "var_uitel")
+	private String varUiTel;
+	@Column(name = "var_remark")
+	private String varRemark;
+	@Column(name = "userbind")
+	private String userbind;
+	@Column(name = "flag_share",columnDefinition="varchar default N")
+	private String flagShare = "N";
+	@Column(name = "flag_isdel",columnDefinition="varchar default N")
+	private String flagIsDel = "N";
+
+	public String getVarPitel() {
+		return varPitel;
+	}
+
+	public void setVarPitel(String varPitel) {
+		this.varPitel = varPitel;
+	}
+
+	public String getVarType() {
+		return varType;
+	}
+
+	public void setVarType(String varType) {
+		this.varType = varType;
+	}
+
+	public String getVarTitle() {
+		return varTitle;
+	}
+
+	public void setVarTitle(String varTitle) {
+		this.varTitle = varTitle;
+	}
+
+	public String getVarDeviceId() {
+		return varDeviceId;
+	}
+
+	public void setVarDeviceId(String varDeviceId) {
+		this.varDeviceId = varDeviceId;
+	}
+
+	public String getVarPassWord() {
+		return varPassWord;
+	}
+
+	public void setVarPassWord(String varPassWord) {
+		this.varPassWord = varPassWord;
+	}
+
+	/*public Timestamp getDateRegTime() {
+		return dateRegTime;
+	}
+
+	public void setDateRegTime(Timestamp dateRegTime) {
+		this.dateRegTime = dateRegTime;
+	}*/
+
+	public String getVarUiTel() {
+		return varUiTel;
+	}
+
+	/*public Date getDateRegTime() {
+		
+		return dateRegTime;
+	}
+
+	public void setDateRegTime(Date dateRegTime) {
+		this.dateRegTime = dateRegTime;
+	}*/
+	
+
+	public void setVarUiTel(String varUiTel) {
+		this.varUiTel = varUiTel;
+	}
+
+	public String getDateRegTime() {
+		return dateRegTime;
+	}
+
+	public void setDateRegTime(String dateRegTime) {
+		this.dateRegTime = dateRegTime;
+	}
+
+	public String getVarRemark() {
+		return varRemark;
+	}
+
+	public void setVarRemark(String varRemark) {
+		this.varRemark = varRemark;
+	}
+	public String getFlagShare() {
+		return flagShare;
+	}
+
+	public void setFlagShare(String flagShare) {
+		this.flagShare = flagShare;
+	}
+	
+	public String getFlagIsDel() {
+		return flagIsDel;
+	}
+	
+	public void setFlagIsDel(String flagIsDel) {
+		this.flagIsDel = flagIsDel;
+	}
+
+	public String getUserbind() {
+		return userbind;
+	}
+
+	public void setUserbind(String userbind) {
+		this.userbind = userbind;
+	}
+
+}

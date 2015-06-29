@@ -1,0 +1,15 @@
+function DeviceManager(o){
+	
+	var panel = new Ext.Panel({
+		title:'DeviceManager',
+		html:'DeviceManager'
+	});
+	
+	
+	 
+	return panel;
+	
+	
+}
+
+

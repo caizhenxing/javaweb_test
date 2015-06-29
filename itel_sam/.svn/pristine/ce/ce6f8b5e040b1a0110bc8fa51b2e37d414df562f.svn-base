@@ -1,0 +1,48 @@
+package com.itel.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="itel_sam_push")
+public class SamPush {
+	@Id
+	@Column(name="uid")
+	private String uid;
+	@Column(name="channel")
+	private String channel;
+	@Column(name="uitel")
+	private String uitel;
+	@Column(name="type")
+	private String type;
+	public String getUid() {
+		return uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
+	public String getChannel() {
+		return channel;
+	}
+	public void setChannel(String channel) {
+		this.channel = channel;
+	}
+	public String getUitel() {
+		return uitel;
+	}
+	public void setUitel(String uitel) {
+		this.uitel = uitel;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	
+	
+
+}

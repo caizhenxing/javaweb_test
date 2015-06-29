@@ -1,0 +1,74 @@
+package com.itel.domain;
+
+import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name="itel_sam_author")
+public class SamAuthor implements Serializable{
+	private static final long serialVersionUID = -923963495199855699L;
+	@Id
+	@Column(name="uid")
+	private String uid;
+	@Column(name="var_pitel")
+	private String varPitel;
+	@Column(name="var_uitel")
+	private String varUitel;
+	@Column(name="var_backname")
+	private String backName;
+	@Column(name="var_devicename")
+	private String deviceName;
+	@Column(name="date_time")
+	private String dateTime;
+	@Column(name="active")
+	private String active;
+	public String getVarPitel() {
+		return varPitel;
+	}
+	public void setVarPitel(String varPitel) {
+		this.varPitel = varPitel;
+	}
+	public String getVarUitel() {
+		return varUitel;
+	}
+	public void setVarUitel(String varUitel) {
+		this.varUitel = varUitel;
+	}
+ 
+	public String getDateTime() {
+		return dateTime;
+	}
+	public void setDateTime(String dateTime) {
+		this.dateTime = dateTime;
+	}
+	public String getBackName() {
+		return backName;
+	}
+	public void setBackName(String backName) {
+		this.backName = backName;
+	}
+	public String getDeviceName() {
+		return deviceName;
+	}
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+	}
+	public String getActive() {
+		return active;
+	}
+	public void setActive(String active) {
+		this.active = active;
+	}
+	public String getUid() {
+		return uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
+
+}

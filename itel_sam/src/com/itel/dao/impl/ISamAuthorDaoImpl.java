@@ -1,0 +1,92 @@
+package com.itel.dao.impl;
+
+import java.util.List;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import com.itel.dao.ISamAuthorDao;
+import com.itel.dao.utils.BaseDao;
+import com.itel.domain.SamAuthor;
+
+/**
+ * 授权信息实现类
+ * @author yangxuan
+ *
+ */
+@Repository
+public class ISamAuthorDaoImpl implements ISamAuthorDao {
+
+	private final Logger logger = Logger.getLogger(ISamAuthorDaoImpl.class);
+	@Autowired
+	private BaseDao baseDao;
+
+	/**
+	 * 通过产品itel号以及用户itel号获取授权信息
+	 */
+	@Override
+	public SamAuthor getSamAuthorByPitel2Uitel(SamAuthor samAuthor) {
+		String queryAuthorSql = "  from SamAuthor where varPitel=? and varUitel=?";
+		List list = null;
+		try {
+			list = this.baseDao.findByHql(queryAuthorSql, new Object[] {
+					samAuthor.getVarPitel(), samAuthor.getVarUitel() });
+		} catch (Exception e1) {
+
+			logger.debug("Sorry,System  queryAuthorSql Exception:sql :"
+					+ queryAuthorSql);
+			e1.printStackTrace();
+		}
+		if (list != null && list.size() > 0)
+			return (SamAuthor) list.get(0);
+		return null;
+	}
+	
+	/**
+	 * 保存授权信息
+	 */
+	@Override
+	public void saveSamAuthor(SamAuthor samAuthor) {
+		this.baseDao.save(samAuthor);
+	}
+
+	/**
+	 * 删除授权信息
+	 */
+	@Override
+	public void deleteSamAuthor(SamAuthor samAuthor) {
+		String sql = " delete from itel_sam_author where var_pitel=? and var_uitel=?";
+		this.baseDao.execBySql(sql, new Object[] { samAuthor.getVarPitel(),
+				samAuthor.getVarUitel() });
+	}
+	
+	/**
+	 * 通过产品itel号获取该设备绑定人员
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<SamAuthor> getAuthorListByPitel(SamAuthor samAuthor) {
+		String hql = " from SamAuthor where varPitel=? and active=?";
+		return (List<SamAuthor>) this.baseDao.findByHql(hql,
+				new Object[] { samAuthor.getVarPitel(),samAuthor.getActive() });
+	}
+	
+	/**
+	 * 修改授权信息活动字段(主动添加以及被动添加)
+	 */
+	@Override
+	public void modifySamAuthorActive(SamAuthor samAuthor) {
+		String sql = " update itel_sam_author set active=? where var_pitel=? and var_uitel=?";
+		this.baseDao.execBySql(sql, new Object[] { samAuthor.getActive(),samAuthor.getVarPitel(),
+				samAuthor.getVarUitel() });
+	}
+	
+	/**
+	 * 修改授权信息备注名称
+	 */
+	@Override
+	public void updateSamAuthor(SamAuthor samAuthor) {
+		String sql = " update itel_sam_author set var_backname=? where var_pitel=? and var_uitel=? ";
+		this.baseDao.execBySql(sql, new Object[] { samAuthor.getBackName(),samAuthor.getVarPitel(),
+				samAuthor.getVarUitel() });
+	}
+}

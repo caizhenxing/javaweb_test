@@ -1,0 +1,264 @@
+function DeviceManager(o) {
+	var onSubmit = function() {
+		Ext.Ajax.request({
+			url : Ext.ctx + '/samNoticController',
+			method : 'POST',
+			defaultHeaders : {
+				'Accept' : 'application/json'
+			},
+			success : Ext.ux.AjaxUtil.successHandler.createSequence(
+					function(r) {
+						noticstore.reload();
+						window.hide();
+					}, this),
+			failure : Ext.ux.AjaxUtil.failureHandler,
+			params : function() {
+				var params = {};
+				form.items.each(function(item, i) {
+							params[item.name] = item.getValue();
+						}, this);
+				return params;
+			}.createDelegate(this)()
+		});
+	};
+	
+	var deleteSubmit = function() {
+		Ext.Ajax.request({
+			url : Ext.ctx + '/samNoticController/deleteNotics',
+			method : 'POST',
+			defaultHeaders : {
+				'Accept' : 'application/json'
+			},
+			success : Ext.ux.AjaxUtil.successHandler.createSequence(
+					function(r) {
+						noticstore.reload();
+						window.hide();
+					}, this),
+			failure : Ext.ux.AjaxUtil.failureHandler,
+			params : function() {
+				var params = new Array();
+				var ids = Ext.getCmp('noticGridId').getSelectionModel().getSelections();
+					Ext.each(ids,function(items){
+						params.push(items.data.uid);
+					})
+				return "ids="+params;
+			}.createDelegate(this)()
+		});
+	};
+	var Record = Ext.data.Record.create( [ {
+		name : 'uid',
+		type : 'string'
+	}, {
+		name : 'title',
+		type : 'string'
+	}, {
+		name : 'userName',
+		type : 'string'
+	}, {
+		name : 'content',
+		type : 'string'
+	}, {
+		name : 'noticType',
+		type : 'string'
+	}, {
+		name : 'deviceType',
+		type : 'string'
+	}, {
+		name : 'uItel',
+		type : 'string'
+	}, {
+		name : 'pubTime',
+		type : 'string'
+	} ]);
+
+	var connection = new Ext.data.Connection( {
+		url : Ext.ctx + '/samNoticController/queryForWhereAnd',
+		method : 'GET',
+		defaultHeaders : {
+			'Accept' : 'application/json'
+		},
+		timeout : 10000
+	});
+	connection.on('requestexception', Ext.ux.AjaxUtil.failureHandler, this);
+
+	var noticstore = new Ext.data.JsonStore( {
+		root : 'results',
+		totalProperty : 'totalCount',
+		remoteSort : true,
+		fields : Record,
+		sortInfo : { field : 'pubTime', direction : 'ASC' },
+						 
+		proxy : new Ext.data.HttpProxy(connection)
+	});
+	noticstore.load();
+
+	var form = new Ext.form.FormPanel( {
+		frame : true,
+		border : false,
+		labelWidth : 60,
+		labelAlign : 'left',
+		region : 'center',
+		buttonAlign : 'right',
+		monitorValid : true,
+		waitMsgTarget : true,
+		defaultType : 'textfield',
+		bodyStyle : 'padding-top:10px;padding-left:20px;padding-right:20px;',
+		items : [ {
+			fieldLabel : '标题',
+			name : 'title',
+			allowBlank : false,
+			width : 210
+		}, {
+			fieldLabel : '发送至',
+			name : 'userName',
+			allowBlank : false,
+			width : 210
+		}, {
+			xtype:'textarea',
+			fieldLabel : '内容',
+			name : 'content',
+			allowBlank : false,
+			width : 210
+		}, {
+			fieldLabel : '消息类型',
+			name : 'noticType',
+			xtype:'combo',
+// hiddenName:'noticType',
+            store: new Ext.data.ArrayStore({
+            	id:'deviceTypeCombo',
+                fields: ['noticType', 'noticTypeCH'],
+                data:[['System','系统消息'],['Person','个人消息']]
+            }),
+            valueField:'noticType',
+            displayField:'noticTypeCH',
+            typeAhead: true,
+            mode: 'local',
+            triggerAction: 'all',
+            emptyText:'请选择消息类型...',
+            selectOnFocus:true,
+			width : 210
+		}, {
+			fieldLabel : '设备类型',
+			name : 'deviceType',
+			xtype:'combo',
+// hiddenName:'deviceType',
+            store: new Ext.data.ArrayStore({
+            	id:'deviceTypeCombo',
+                fields: ['deviceType', 'deviceTypeCH'],
+                data:[['S','摄像头'],['M','猫眼']]
+            }),
+            valueField:'deviceType',
+            displayField:'deviceTypeCH',
+            typeAhead: true,
+            mode: 'local',
+            triggerAction: 'all',
+            emptyText:'请选择设备类型...',
+            selectOnFocus:true,
+			width : 210
+		}, {
+			fieldLabel : 'uItel',
+			name : 'uItel',
+			width : 210
+		} ],
+		buttons : [ {
+			text : '确定',
+			formBind : true,
+			handler:function(){
+				onSubmit();
+		}
+		}, {
+			text : '取消',
+			handler : function() {
+				window.hide();
+				
+			}
+		} ],
+
+		keys : [ {
+			key : [ 10, 13 ],
+			stopEvent : true
+		/*
+		 * , fn : onSubmit
+		 */
+		} ]
+	});
+
+	var window = new Ext.Window( {
+		title : '消息发布',
+		items : [ form ],
+		closeAction : 'hide'
+	});
+	var sm = new Ext.grid.CheckboxSelectionModel();//设置多选
+	var grid = new Ext.grid.GridPanel( {
+		id:'noticGridId',
+		store : noticstore,
+		tbar : [ new Ext.Button( {
+			text : '消息发布',
+			listeners : {
+				'click' : function() {
+					window.show();
+				}
+			}
+		}), '-', new Ext.Button( {
+			text : '删除',
+			listeners:{
+				'click':function(){
+				deleteSubmit();
+				}
+			}
+		}) ],
+		sm:sm,
+		columns : [new Ext.grid.RowNumberer(),
+		           sm,{
+			id : 'title',
+			header : '标题',
+			width : 160,
+			sortable : true,
+			dataIndex : 'title'
+		}, {
+			header : '用户名',
+			width : 75,
+			sortable : true,
+			// renderer : 'usMoney',
+			dataIndex : 'userName'
+		}, {
+			header : '内容',
+			width : 75,
+			sortable : true,
+			dataIndex : 'content'
+		}, {
+			header : '消息类型',
+			width : 75,
+			sortable : true,
+			dataIndex : 'noticType'
+		}, {
+			header : '设备类型',
+			width : 75,
+			sortable : true,
+			dataIndex : 'deviceType'
+		}, {
+			header : 'Uitel',
+			width : 85,
+			sortable : true,
+			// renderer : Ext.util.Format.dateRenderer('m/d/Y'),
+			dataIndex : 'uItel'
+		}, {
+			header : '发布时间',
+			width : 85,
+			sortable : true,
+			// renderer : Ext.util.Format.dateRenderer('m/d/Y'),
+			dataIndex : 'pubTime'
+		} ],
+		viewConfig : {
+			forceFit : true
+		},
+		stripeRows : true,
+		autoExpandColumn : 'company',
+		height : 650,
+		stateful : true,
+		stateId : 'grid'
+	});
+
+	return grid;
+
+}

@@ -1,0 +1,66 @@
+package com.sun.test;
+
+import java.io.IOException;
+
+import net.sf.json.JSONObject;
+
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpException;
+import org.apache.commons.httpclient.NameValuePair;
+import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.methods.PostMethod;
+import org.junit.Before;
+import org.junit.Test;
+
+public class CloudCommunityTest {
+	private HttpClient client = null;
+	private GetMethod getMethod = null;
+	private PostMethod postMethod = null;
+	private final String url = "http://192.168.1.9:7090/CloudCommunity/";
+
+	@Before
+	public void init() {
+		client = new HttpClient();
+	}
+	@Test
+	public void checkedEmailCode(){
+		getMethod = new GetMethod(url + "user/checkedEmailCode.json?itel=18627540357&code=762002");
+		try {
+			 
+			int state = client.executeMethod(getMethod);
+			System.out.println("state:" + state);
+			String result = getMethod.getResponseBodyAsString();
+			System.out.println(result);
+		} catch (HttpException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void checkItelPassword(){
+		postMethod = new PostMethod(url + "user/checkItelPassword.json");//
+		try {
+			postMethod.addRequestHeader("Accept-Language", "zh-CN");
+			postMethod.addRequestHeader("Accept", "application/json");
+			postMethod.addRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			NameValuePair[] list = new NameValuePair[] {
+					new NameValuePair("itel", "6667777888999"),//设备Itel号
+					new NameValuePair("password", "Sss"),
+					new NameValuePair("sessiontoken", "18627540357_surveillance-android_00000000-7cae-42f5-0033-c5870033c587_2656841406091242262")
+					};
+			postMethod.setRequestBody("sessiontoken=18627540357_surveillance-android_00000000-7cae-42f5-0033-c5870033c587_2656841406091242262&itel=23921&password=sds");
+//			postMethod.addParameters(list);
+			int state = client.executeMethod(postMethod);
+			System.out.println("state:" + state);
+			String result = postMethod.getResponseBodyAsString();
+			System.out.println(result);
+		} catch (HttpException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+}

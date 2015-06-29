@@ -1,0 +1,58 @@
+package com.sun.test;
+
+import java.io.IOException;
+import java.util.Random;
+
+import oracle.net.aso.n;
+
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpException;
+import org.apache.commons.httpclient.NameValuePair;
+import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.methods.PostMethod;
+import org.junit.Before;
+import org.junit.Test;
+
+import cn.jpush.api.utils.Base64;
+
+public class JpushTest {
+
+	private HttpClient client = null;
+	private GetMethod getMethod = null;
+	private PostMethod postMethod = null;
+	private final String url = "https://api.jpush.cn/v3/push";
+
+	@Before
+	public void init() {
+		client = new HttpClient();
+	}
+	@Test
+	public void pushNotification()throws Exception{
+		char[] base64 = Base64.encode(("3259f0dbb3b30b010de8e25f"+":"+"bfa29d1a23557cea8aa2c221").getBytes());
+		System.out.println(base64);
+		
+//		
+		String str = "{\"notification\" : {\"ios\" : {\"alert\" : \"hello, JPush!\",\"sound\" : \"happy\",\"badge\" : 1,\"extras\" : {\"news_id\" : 134,\"my_key\" : \"a value\"}}}}";
+		System.out.println(str);
+		postMethod = new PostMethod(url+"?"+str);
+		try {
+			postMethod.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			postMethod.setRequestHeader("Authorization", base64+"");
+			/*NameValuePair nameValuePair = new NameValuePair();
+			NameValuePair[] list = new NameValuePair[] {
+					new NameValuePair("sendno", Random.class.newInstance().nextInt(10000000)+""),
+					new NameValuePair("app_key", "3259f0dbb3b30b010de8e25f"),
+					new NameValuePair("receiver_type", "4"),
+					new NameValuePair("msg_type", "1")};
+			postMethod.addParameters(list);*/
+			int state = client.executeMethod(postMethod);
+			System.out.println("state:" + state);
+			String result = postMethod.getResponseBodyAsString();
+			System.out.println(result);
+		} catch (HttpException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

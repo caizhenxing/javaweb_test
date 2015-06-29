@@ -1,0 +1,459 @@
+2014-07-02 02:40:08:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-02 02:41:19:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-02 02:42:54:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-02 02:46:04:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-02 02:46:41:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-02 02:49:16:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-02 03:16:20:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-02 05:16:33:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-02 05:22:54:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-02 05:23:04:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-02 05:23:22:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-02 05:23:29:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-02 05:31:34:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-02 05:34:27:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-02 05:34:44:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-02 05:35:16:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-02 05:35:28:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-02 05:38:11:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 09:21:51:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 10:23:15:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 10:25:57:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 10:30:05:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 10:30:39:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 10:31:33:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 10:38:13:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 10:39:13:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 10:39:30:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 10:40:00:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 10:41:37:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 10:43:30:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 10:45:42:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 10:45:49:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 10:59:08:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 11:01:15:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 11:01:26:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 11:02:27:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 11:03:58:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 11:16:12:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 11:17:24:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 11:18:22:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 11:19:21:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 11:19:55:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 11:30:30:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 11:43:25:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 11:44:11:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 01:00:16:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 01:00:27:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 01:09:50:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 01:14:05:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 01:15:42:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 01:18:49:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 01:27:19:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 01:39:40:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 01:40:21:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 02:13:45:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 02:13:49:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 02:14:34:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 02:15:12:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 02:16:07:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 02:16:57:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 02:22:06:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 02:33:47:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 02:34:27:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 02:36:07:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 02:36:55:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:06:53:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:07:49:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:09:31:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:10:56:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:13:03:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:14:43:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:15:15:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:16:17:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:16:49:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:17:13:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:23:01:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:24:25:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:25:28:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:26:26:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:27:30:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:28:41:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:31:16:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-03 03:31:32:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-04 09:52:07:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-04 09:52:31:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-04 10:03:54:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-04 10:03:58:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-04 10:04:04:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-04 10:04:40:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-04 10:08:45:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-04 05:23:29:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 09:52:11:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:12:47:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:13:08:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:14:19:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:20:36:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:22:42:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:24:58:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:31:15:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:32:43:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:33:23:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:34:21:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:34:55:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:36:38:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:37:20:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:39:30:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:41:30:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:42:37:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:44:11:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:45:50:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:46:40:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:48:03:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 10:51:48:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 11:59:01:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 12:00:15:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 12:39:53:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 12:41:38:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 12:42:19:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 12:42:40:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 12:42:58:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 12:43:31:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 12:43:47:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 12:43:59:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 12:44:51:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 12:47:11:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 12:47:15:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 12:48:10:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 12:53:07:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 12:54:19:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 01:18:18:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 01:18:37:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 01:25:05:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 01:28:23:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 01:28:36:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 01:37:04:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 01:37:30:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-07 06:06:13:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-08 02:23:25:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-08 03:54:40:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-08 04:58:07:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-09 10:55:22:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-09 03:16:24:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-09 03:17:11:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-09 03:22:05:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-09 03:22:48:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-09 03:24:36:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-09 03:25:24:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-09 03:25:43:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-09 03:25:53:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-09 03:26:04:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-09 03:29:27:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-09 04:00:04:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-10 12:49:12:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-10 12:49:21:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-10 01:05:00:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-10 01:05:30:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-10 01:10:59:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-10 01:13:57:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-10 01:19:57:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 10:44:34:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 11:14:07:INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1c9de24: startup date [Fri Jul 11 11:14:07 CST 2014]; root of context hierarchy
+2014-07-11 11:14:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 11:14:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 11:14:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 11:14:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 11:14:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 11:14:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 11:14:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 11:17:07:INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1c9de24: startup date [Fri Jul 11 11:17:07 CST 2014]; root of context hierarchy
+2014-07-11 11:17:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 11:17:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 11:17:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 11:17:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 11:17:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 11:17:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 11:17:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 11:17:57:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 11:17:57:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 11:17:57:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 11:17:57:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 11:17:57:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 11:17:57:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 11:17:57:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 11:18:39:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 11:18:39:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 11:18:39:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 11:18:39:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 11:18:39:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 11:18:39:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 11:18:39:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 11:20:16:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 11:20:17:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 11:20:17:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 11:20:17:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 11:20:17:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 11:20:17:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 11:20:17:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 11:21:48:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 11:21:48:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 11:21:48:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 11:21:48:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 11:21:48:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 11:21:48:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 11:21:48:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 11:24:42:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 11:24:42:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 11:24:42:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 11:24:42:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 11:24:42:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 11:24:42:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 11:24:42:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 11:25:04:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 11:25:04:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 11:25:04:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 11:25:04:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 11:25:04:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 11:25:04:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 11:25:04:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 11:50:58:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 12:03:51:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 12:05:10:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 12:06:50:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 12:46:29:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 12:46:30:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 12:46:30:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 12:46:30:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 12:46:30:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 12:46:30:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 12:46:30:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 12:47:22:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 12:47:23:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 12:47:23:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 12:47:23:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 12:47:23:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 12:47:23:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 12:47:23:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 12:48:38:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 12:48:38:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 12:48:38:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 12:48:38:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 12:48:38:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 12:48:38:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 12:48:38:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 12:48:49:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 12:48:50:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 12:48:50:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 12:48:50:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 12:48:50:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 12:48:50:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 12:48:50:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 12:54:34:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 12:54:34:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 12:54:34:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 12:54:34:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 12:54:34:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 12:54:34:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 12:54:34:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 12:55:16:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 12:55:16:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 12:55:16:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 12:55:17:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 12:55:17:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 12:55:17:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 12:55:17:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 12:55:57:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 12:55:57:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 12:55:57:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 12:55:57:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 12:55:57:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 12:55:57:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 12:55:57:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 12:56:52:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 12:56:52:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 12:56:52:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 12:56:52:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 12:56:52:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 12:56:52:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 12:56:52:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 12:57:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 12:57:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 12:57:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 12:57:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 12:57:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 12:57:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 12:57:07:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 01:01:18:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 01:02:35:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 01:03:44:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 01:04:49:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 01:06:42:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 01:07:01:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 01:07:17:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 01:09:46:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 01:13:43:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 01:15:30:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 01:15:51:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 01:18:49:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 01:24:42:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 01:25:11:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 01:25:23:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 01:26:01:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 01:26:22:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 02:08:10:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 02:08:11:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 02:08:11:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 02:08:11:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 02:08:11:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 02:08:11:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 02:08:11:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 02:11:14:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 02:11:14:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 02:11:14:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 02:11:14:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 02:11:14:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 02:11:14:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 02:11:14:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 02:11:53:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 02:11:53:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 02:11:53:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 02:11:53:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 02:11:53:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 02:11:54:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 02:11:54:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 02:15:24:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 02:15:25:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 02:15:25:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 02:15:25:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 02:15:25:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 02:15:25:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 02:15:25:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 02:17:59:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 02:17:59:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 02:18:00:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 02:18:00:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 02:18:00:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 02:18:00:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 02:18:00:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 02:38:40:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 02:38:40:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 02:38:40:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 02:38:40:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 02:38:40:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 02:38:40:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 02:38:40:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 02:39:52:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 02:39:52:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 02:39:52:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 02:39:52:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 02:39:52:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 02:39:52:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 02:39:52:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 02:43:21:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 02:43:21:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 02:43:21:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 02:43:21:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 02:43:21:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 02:43:21:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 02:43:22:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 03:17:23:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 03:17:24:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 03:17:24:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 03:17:24:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 03:17:24:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 03:17:24:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 03:17:24:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 03:17:29:INFO main cn.jpush.api.common.NativeHttpClient - Got error response - responseCode:400, responseContent:{"msg_id": 1010177326, "error": {"message": "cannot find user by this audience", "code": 1011}}
+2014-07-11 03:17:29:ERROR main cn.jpush.api.common.NativeHttpClient - Your request params is invalid. Please check them according to error message.
+2014-07-11 03:22:29:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 03:22:29:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 03:22:29:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 03:22:29:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 03:22:29:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 03:22:29:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 03:22:29:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 03:29:24:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 03:29:24:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 03:29:24:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 03:29:24:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 03:29:24:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 03:29:24:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 03:29:24:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 03:29:58:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 03:29:58:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 03:29:58:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 03:29:58:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 03:29:58:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 03:29:58:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 03:29:58:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 03:32:33:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 03:32:33:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 03:32:33:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 03:32:33:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 03:32:33:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 03:32:33:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 03:32:33:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 03:34:21:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 03:34:21:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 03:34:21:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 03:34:21:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 03:34:21:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 03:34:21:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 03:34:21:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 03:34:40:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 03:34:40:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 03:34:40:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 03:34:40:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 03:34:40:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 03:34:40:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 03:34:40:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 03:35:09:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 03:35:09:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 03:35:10:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 03:35:10:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 03:35:10:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 03:35:10:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 03:35:10:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 04:02:16:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-11 04:02:16:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-11 04:02:16:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-11 04:02:16:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-11 04:02:16:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-11 04:02:16:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-11 04:02:16:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-11 04:09:49:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 04:10:17:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 04:25:41:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 04:28:16:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 04:29:15:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-11 05:03:53:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-14 09:30:16:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-14 09:30:17:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-14 09:30:17:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-14 09:30:17:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-14 09:30:17:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-14 09:30:17:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-14 09:30:17:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-14 09:30:43:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext.xml]
+2014-07-14 09:30:44:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-dao.xml]
+2014-07-14 09:30:44:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-service.xml]
+2014-07-14 09:30:44:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-controller.xml]
+2014-07-14 09:30:44:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [cxf.xml]
+2014-07-14 09:30:44:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2014-07-14 09:30:44:INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+2014-07-14 09:39:46:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-14 09:41:07:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-14 09:42:59:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-14 09:46:00:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-14 09:46:31:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-14 09:46:53:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-14 09:47:47:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-14 09:47:59:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-14 09:48:14:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-14 09:50:45:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-14 09:51:19:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-14 10:55:54:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-14 11:03:40:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-14 11:16:19:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-14 11:16:29:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.
+2014-07-14 11:17:01:WARN main org.apache.commons.httpclient.HttpMethodBase - Going to buffer response body of large or unknown size. Using getResponseAsStream instead is recommended.

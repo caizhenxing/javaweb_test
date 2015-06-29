@@ -1,0 +1,12 @@
+package com.itel.dao;
+
+/**
+ * 帮助中心Dao
+ * @author Administrator
+ *
+ */
+public interface ISamHelpCenterDao {
+	
+	public void deleteSamHelpCenter(String id);
+
+}

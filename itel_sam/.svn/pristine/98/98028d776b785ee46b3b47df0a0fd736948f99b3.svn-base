@@ -1,0 +1,377 @@
+package com.itel.web.controller;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
+import oracle.net.aso.g;
+
+import org.apache.log4j.Logger;
+import org.hibernate.HibernateException;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.itel.dao.utils.QueryCondition;
+import com.itel.data.GridResult;
+import com.itel.domain.SamAuthor;
+import com.itel.domain.SamDevice;
+import com.itel.service.ISamDeviceService;
+import com.itel.tools.ControllerSupport;
+import com.sencha.gxt.widget.core.client.form.DualListField.Mode;
+import com.sun.org.apache.regexp.internal.recompile;
+
+@Controller
+@RequestMapping("/samDeviceController")
+public class SamDeviceController extends ControllerSupport<SamDevice> {
+	
+	private final static Logger log = Logger.getLogger(SamDeviceController.class);
+	
+	@Autowired
+	private ISamDeviceService iSamDeviceService;
+
+	/**
+	 * 添加摄像头-配置设备
+	 * 
+	 * @param entity
+	 * @return
+	 */
+	@RequestMapping(value = "/addDevice", method = RequestMethod.POST)
+	public ModelAndView addDevice(SamDevice entity) {
+		String sql = "select * from itel_sam_device where var_pitel=?";
+		List<SamDevice> list = null;
+		GridResult gridResult = new GridResult();
+		try {
+			list = new ArrayList<SamDevice>();
+			list = this.baseDao.findBySql(sql, new Object[] { entity
+					.getVarPitel() });
+			if (list.size() > 0) {
+				gridResult.setSuccess(false);
+				gridResult.setMsg("对不起,该iTel号已注册");
+				log.debug("对不起,该iTel号已注册");
+				return new ModelAndView("jsonView", gridResult);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return super.add(entity);
+	}
+	
+	
+	/**
+	 * 设备解除绑定
+	 * @return
+	 */
+	@RequestMapping(value="/deleteDevice",method=RequestMethod.POST)
+	public ModelAndView deleteDevice(SamDevice samDevice){
+		SamDevice queryDevice = (SamDevice) this.baseDao.findById(
+				SamDevice.class, samDevice.getVarPitel());
+		GridResult gridResult = new GridResult();
+		if(queryDevice!=null){
+			String sql = "";
+			if (queryDevice.getVarUiTel().equals(samDevice.getVarUiTel())) {
+				sql = " delete from  itel_sam_device where var_pitel=? and var_uitel=?";
+			} else {
+				sql = " delete from itel_sam_author where var_pitel=? and var_uitel=?";
+			}
+			int state = this.baseDao.execBySql(sql, new Object[] {
+					 samDevice.getVarPitel(),samDevice.getVarUiTel() });
+			gridResult.setSuccess(true);
+			if (state == 0) {
+				gridResult.setMsg("操作失败");
+				gridResult.setSuccess(false);
+			}
+		}else{
+			gridResult.setSuccess(false);
+			gridResult.setMsg("对不起,该设备不存在");
+			return new ModelAndView("jsonView",gridResult);
+		}
+		return new ModelAndView("jsonView",gridResult);
+	}
+	
+	
+
+	/**
+	 * 添加摄像头-添加已有设备
+	 * 
+	 * @param entity
+	 * @return
+	 */
+	@RequestMapping(value = "/addExistDevice", method = RequestMethod.POST)
+	public ModelAndView addExitsDevice(SamDevice entity) {
+		String hql = " from SamDevice where varPitel=?";
+		List<SamDevice> list = null;
+		GridResult gridResult = new GridResult();
+		try {
+			list = new ArrayList<SamDevice>();
+			list = this.baseDao.getHibernateTemplate().find(hql,
+					entity.getVarPitel());
+			if (list.size() > 0) {
+				SamDevice samDevice = list.get(0);
+				String userBind = samDevice.getUserbind();
+				if("N".equals(userBind)){
+					gridResult.setSuccess(false);
+					gridResult.setMsg("该摄像头不允许所有人绑定,不能添加");
+					log.debug("该摄像头不允许所有人绑定,不能添加");
+					return new ModelAndView("jsonView", gridResult);
+				}
+				String isdel = samDevice.getFlagIsDel();
+				if ("Y".equals(isdel)) {
+					gridResult.setSuccess(false);
+					gridResult.setMsg("该摄像头已已损坏,不能添加");
+					log.debug("该摄像头已已损坏,不能添加");
+					return new ModelAndView("jsonView", gridResult);
+				}
+				String share = samDevice.getFlagShare();
+				if ("Y".equals(share)) {
+					gridResult.setSuccess(false);
+					gridResult.setMsg("该摄像头为公开摄像头,不能添加");
+					log.debug("该摄像头为公开摄像头,不能添加");
+					return new ModelAndView("jsonView", gridResult);
+				}
+				String password = samDevice.getVarPassWord();
+				if (!password.equals(entity.getVarPassWord())) {
+					gridResult.setSuccess(false);
+					gridResult.setMsg("对不起,您输入的密码错误");
+					log.debug("对不起,您输入的密码错误");
+					return new ModelAndView("jsonView", gridResult);
+				} else {
+					String uiTel = samDevice.getVarUiTel();
+					if (uiTel.equals(entity.getVarUiTel())) {
+						gridResult.setSuccess(false);
+						gridResult.setMsg("对不起,该摄像头为您自己的设备,已在我的摄像头列表");
+						log.debug("对不起,该摄像头为您自己的设备,已在我的摄像头列表");
+						return new ModelAndView("jsonView", gridResult);
+					}
+				}
+			} else {
+				gridResult.setSuccess(false);
+				gridResult.setMsg("对不起,该设备未绑定iTel号");
+				log.debug("对不起,该设备未绑定iTel号");
+				return new ModelAndView("jsonView", gridResult);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		SamAuthor samAuthor = new SamAuthor();
+		samAuthor.setVarPitel(entity.getVarPitel());
+		samAuthor.setDeviceName(entity.getVarTitle());
+		samAuthor.setVarUitel(entity.getVarUiTel());
+		samAuthor.setDateTime(new Date());
+
+		String queryAuthorSql  = " select * from itel_sam_author where var_pitel=? and var_uitel=?";
+		int num = 0;
+		try {
+			num = this.baseDao.countBySql(queryAuthorSql, new Object[]{samAuthor.getVarPitel(), samAuthor.getVarUitel()});
+		} catch (Exception e1) {
+			gridResult.setSuccess(false);
+			logger.debug("Sorry,System  countBySql Exception:sql :"+queryAuthorSql);
+			gridResult.setMsg("Sorry,System  countBySql Exception");
+			return new ModelAndView("jsonView", gridResult);
+		}
+		if (num > 0) {
+			gridResult.setSuccess(false);
+			gridResult.setMsg("对不起,该设备已在我的摄像头列表");
+			log.debug("对不起,该设备已在我的摄像头列表");
+			return new ModelAndView("jsonView", gridResult);
+		} else {
+			try {
+				baseDao.save(samAuthor);
+				gridResult.setSuccess(true);
+				logger.debug("save success");
+				gridResult.setMsg("save success");
+			} catch (Exception e) {
+				gridResult.setSuccess(false);
+				logger.debug("success failure");
+				gridResult.setMsg("success failure");
+				return new ModelAndView("jsonView", gridResult);
+			}
+		}
+		gridResult.setSuccess(true);
+		return new ModelAndView("jsonView", gridResult);
+
+	}
+
+	/**
+	 * 我的设备列表
+	 * 
+	 * @param queryCondition
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/getOwerDevice", method = RequestMethod.GET)
+	public ModelAndView getOwerDevice(QueryCondition queryCondition) {
+		Map<String, Object> fields = queryCondition.getFields();
+		final String uItel = fields.get("varUiTel") + "";
+		final StringBuffer sql = new StringBuffer(
+				"   SELECT d.var_pitel,d.var_type,d.var_title,d.var_deviceid,d.var_password,d.date_regtime,d.var_uitel," +
+				" d.var_remark,d.flag_share,d.flag_isdel,NULL AS var_devicename,d.userbind FROM itel_sam_device AS d " +
+				" WHERE d.`var_uitel`=? UNION ALL  " +
+				" SELECT d.var_pitel,d.var_type,d.var_title,d.var_deviceid,d.var_password,d.date_regtime,d.var_uitel," +
+				" d.var_remark,d.flag_share,d.flag_isdel,a.var_devicename,d.userbind " +
+				" FROM itel_sam_device AS d  LEFT JOIN itel_sam_author AS a ON d.`var_pitel`=a.`var_pitel` WHERE a.`var_uitel`=?");
+
+		if (queryCondition.getPageIndex() != null) {
+			sql.append(" limit " + queryCondition.getPageIndex()*queryCondition.getPageMax());
+		}
+		if (queryCondition.getPageMax() != null) {
+			sql.append(" , " + queryCondition.getPageMax());
+		}
+		List<SamDevice> list = this.baseDao.getHibernateTemplate().execute(
+				new HibernateCallback() {
+					@Override
+					public Object doInHibernate(Session session)
+							throws HibernateException, SQLException {
+						Connection con = session.connection();
+						PreparedStatement ps = con.prepareStatement(sql
+								.toString());
+						ps.setString(1, uItel);
+						ps.setString(2, uItel);
+						ResultSet rs = ps.executeQuery();
+						List<SamDevice> list = new ArrayList<SamDevice>();
+						while (rs.next()) {
+							SamDevice samDevice = new SamDevice();
+							String pitel = rs.getString(1);
+							samDevice.setVarPitel(pitel);
+							String type = rs.getString(2);
+							samDevice.setVarType(type);
+							String title = rs.getString(11);
+							if (title != null && !"".equals(title)) {
+								samDevice.setVarTitle(title);
+							} else {
+								title = rs.getString(3);
+								samDevice.setVarTitle(title);
+							}
+							String deviceId = rs.getString(4);
+							samDevice.setVarDeviceId(deviceId);
+							String password = rs.getString(5);
+							samDevice.setVarPassWord(password);
+							Timestamp regtime = rs.getTimestamp(6);
+							samDevice.setDateRegTime(regtime);
+							String uitel = rs.getString(7);
+							samDevice.setVarUiTel(uitel);
+							String remark = rs.getString(8);
+							samDevice.setVarRemark(remark);
+							String share = rs.getString(9);
+							samDevice.setFlagShare(share);
+							String isdel = rs.getString(10);
+							samDevice.setFlagIsDel(isdel);
+							String userbind = rs.getString(12);
+							samDevice.setUserbind(userbind);
+							list.add(samDevice);
+						}
+						return list;
+					}
+				});
+		return new ModelAndView("jsonView", new GridResult<SamDevice>(list,
+				list.size()));
+	}
+
+	/**
+	 * 我的监控列表修改设备别名
+	 * 
+	 * @return
+	 */
+	@RequestMapping(value = "/updateTitle", method = RequestMethod.POST)
+	public ModelAndView updateTitle(SamDevice samDevice) {
+		SamDevice queryDevice = (SamDevice) this.baseDao.findById(
+				SamDevice.class, samDevice.getVarPitel());
+		GridResult gridResult = new GridResult();
+		if(queryDevice!=null){
+			String sql = "";
+			if (queryDevice.getVarUiTel().equals(samDevice.getVarUiTel())) {
+				sql = " update itel_sam_device set var_title=? where var_pitel=? and var_uitel=?";
+			} else {
+				sql = " update itel_sam_author set var_devicename=? where var_pitel=? and var_uitel=?";
+			}
+			int state = this.baseDao.execBySql(sql, new Object[] {
+					samDevice.getVarTitle(), samDevice.getVarPitel(),samDevice.getVarUiTel() });
+			gridResult.setSuccess(true);
+			if (state == 0) {
+				gridResult.setMsg("操作失败,你没有该操作权限");
+				gridResult.setSuccess(false);
+			}
+		}else{
+			gridResult.setSuccess(false);
+			gridResult.setMsg("对不起,该设备不存在");
+			return new ModelAndView("jsonView",gridResult);
+		}
+		return new ModelAndView("jsonView",gridResult);
+	}
+
+	/**
+	 * 设置摄像头公开
+	 * 
+	 * @return
+	 */
+	@RequestMapping(value = "/setDeviceShare", method = RequestMethod.POST)
+	public ModelAndView setDeviceShare(SamDevice samDevice) {
+		String sql = " update itel_sam_device set flag_share=? where var_pitel=?";
+		int state = this.baseDao.execBySql(sql, new Object[] {
+				samDevice.getFlagShare(), samDevice.getVarPitel() });
+		return new ModelAndView("jsonView");
+	}
+	
+	/**
+	 * 设置允许所有人绑定
+	 * @param samDevice
+	 * @return
+	 */
+	@RequestMapping(value="/setAllUserBind",method=RequestMethod.POST)
+	public ModelAndView setAllUserBind(SamDevice samDevice){
+		String queryAuthorSql  = " select * from itel_sam_device where var_pitel=? and var_uitel=?";
+		int num = 0;
+		GridResult gridResult = new GridResult();
+		try {
+			num = this.baseDao.countBySql(queryAuthorSql, new Object[]{samDevice.getVarPitel(), samDevice.getVarUiTel()});
+		} catch (Exception e1) {
+			gridResult.setSuccess(false);
+			logger.debug("Sorry,System  countBySql Exception:sql :"+queryAuthorSql);
+			gridResult.setMsg("Sorry,System  countBySql Exception");
+			return new ModelAndView("jsonView", gridResult);
+		}
+		if (num > 0) {
+			try {
+				String updatesql = " update itel_sam_device set userbind=? where var_pitel=? ";
+				int i  = this.baseDao.execBySql(updatesql, new Object[]{samDevice.getUserbind(),samDevice.getVarPitel()});
+				if(i!=0){
+					gridResult.setSuccess(true);
+					logger.debug("save success");
+					gridResult.setMsg("save success");
+				}else{
+					gridResult.setSuccess(false);
+					logger.debug("save false");
+					gridResult.setMsg("save false");
+				}
+			} catch (Exception e) {
+				gridResult.setSuccess(false);
+				logger.debug("success failure");
+				gridResult.setMsg("success failure");
+				return new ModelAndView("jsonView", gridResult);
+			}			
+			
+		} else {
+			gridResult.setSuccess(false);
+			gridResult.setMsg("对不起,该摄像头不是您的设备");
+			log.debug("对不起,该摄像头不是您的设备");
+			return new ModelAndView("jsonView", gridResult);
+		}
+		
+		return new ModelAndView("jsonView",gridResult);
+		
+	}
+
+}

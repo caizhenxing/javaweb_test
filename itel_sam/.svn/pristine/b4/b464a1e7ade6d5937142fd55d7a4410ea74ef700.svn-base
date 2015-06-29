@@ -1,0 +1,9 @@
+package com.itel.service;
+
+import com.itel.data.GridResult;
+
+public interface ISamHelpCenterService {
+	
+	public GridResult deleteSamHelpCenters(String[] ids);
+
+}

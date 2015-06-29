@@ -1,0 +1,8 @@
+#文件上传配置
+
+#最大上传文件 4M
+#upload.maxUploadSize=4096000
+upload.maxUploadSize=409600000
+
+#在内存中的最大size 4K
+upload.maxInMemorySize=4096

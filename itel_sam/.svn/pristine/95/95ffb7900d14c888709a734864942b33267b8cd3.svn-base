@@ -1,0 +1,14 @@
+package com.itel.service;
+
+import com.itel.domain.SamPush;
+
+/**
+ * 设备推送服务接口
+ * @author Administrator
+ *
+ */
+public interface ISamPushService {
+	
+	void saveSamPush(SamPush samPush);
+
+}

@@ -1,0 +1,57 @@
+package com.itel.domain;
+
+public class PushMessage {
+	private String type;//推送通知还是消息
+	private String platForm;//手机操作平台
+	private String channel;//极光推送中的注册id
+	private String uitel;//与极光推送alias一致
+	private String all;//是否发送给所有人
+	private String title;//标题
+	private String content;//内容
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public String getPlatForm() {
+		return platForm;
+	}
+	public void setPlatForm(String platForm) {
+		this.platForm = platForm;
+	}
+	public String getUitel() {
+		return uitel;
+	}
+	public void setUitel(String uitel) {
+		this.uitel = uitel;
+	}
+	public String getChannel() {
+		return channel;
+	}
+	public void setChannel(String channel) {
+		this.channel = channel;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getAll() {
+		return all;
+	}
+	public void setAll(String all) {
+		this.all = all;
+	}
+	
+	
+	
+
+}

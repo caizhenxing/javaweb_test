@@ -1,0 +1,27 @@
+package com.itel.web.controller;
+
+import java.util.UUID;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.itel.domain.SamDevice;
+import com.itel.domain.SamNotic;
+import com.itel.tools.ControllerSupport;
+
+
+@Controller
+@RequestMapping("/samNoticController")
+public class SamNoticController extends ControllerSupport<SamNotic>{
+
+	@Override
+	public ModelAndView add(SamNotic entity) {
+		entity.setUid(UUID.randomUUID().toString());
+		return super.add(entity);
+	}
+	
+	
+
+}

@@ -1,0 +1,45 @@
+package com.itel.web.controller;
+
+
+import org.eclipse.jetty.http.security.Credential.MD5;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+
+import com.itel.domain.LoginAccount;
+import com.itel.service.LoginAccountService;
+import com.itel.tools.ControllerSupport;
+
+
+@Controller
+@RequestMapping("/login")
+public class LoginController extends ControllerSupport<LoginAccount>{
+	@Autowired
+	private LoginAccountService loginAccountService;
+	
+	@RequestMapping(method = RequestMethod.GET)
+	public String setupForm(ModelMap model) {
+		model.addAttribute("loginAccount", new LoginAccount());
+		return "login";
+	}
+	
+	@RequestMapping(value="/submit",method = RequestMethod.POST)
+	public String processSubmit(LoginAccount loginAccount,
+			BindingResult result, ModelMap model) {
+		loginAccount.setPassword(MD5.digest(loginAccount.getPassword()));
+		LoginAccount user = loginAccountService.submitLogin(loginAccount);
+		if(user!=null){
+			model.addAttribute("userName", user.getUsername());
+		}else{
+			result.addError(new ObjectError("password","对不起,账号或者密码输入错误."));
+			return "login";
+		}
+		return "main";
+	}
+	
+}

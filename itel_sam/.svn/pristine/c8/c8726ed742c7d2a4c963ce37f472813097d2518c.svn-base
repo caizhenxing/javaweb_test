@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-3.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+	<!-- 注解驱动 -->
+	<mvc:annotation-driven />
+	<!-- 资源映射,SpringMVC任何资源对应一个url,包括图片.需要配置resource,否则资源无法找到 -->
+	<mvc:resources mapping="/css/**" location="/css/" />
+	<mvc:resources mapping="/images/**" location="/images/" />
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/javascript/**" location="/javascript/" />
+	<mvc:resources mapping="/upload/**" location="/upload/" />
+	<!-- 资源映射,SpringMVC任何资源对应一个url,包括图片.需要配置resource,否则资源无法找到 -->
+	<context:component-scan base-package="com.itel" />
+	<!--
+		<context:component-scan base-package="com.itel.dao" />
+		<context:component-scan base-package="com.itel.service" />
+		<context:component-scan base-package="com.itel.web.controller" />
+	--><!-- 增加propertes引入 -->
+	<context:property-placeholder location="classpath:database.properties" />
+	<context:property-placeholder location="classpath:multipart.properties" />
+	<!-- 增加propertes引入 -->
+	<!-- 导入额外application.xml -->
+	<import resource="applicationContext-dao.xml" />
+	<import resource="applicationContext-service.xml" />
+	<import resource="applicationContext-controller.xml" />
+	<import resource="cxf.xml" />
+	<!-- 导入额外application.xml -->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+	<!-- 处理方法级别上的@RequestMapping注解 -->
+	<bean id="annotationMethodHandlerAdapter"
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.StringHttpMessageConverter">
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 对模型视图名称的解析, 即在模型视图名称添加前后缀 -->
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<!-- 设置为true以忽略对Accept Header的支持 -->
+		<property name="ignoreAcceptHeader" value="false" />
+		<property name="favorPathExtension" value="false" />
+		<property name="defaultContentType" value="text/html" />
+		<property name="mediaTypes">
+			<map>
+				<entry key="json" value="application/json" />
+				<!-- <entry key="xml" value="application/xml" /> -->
+			</map>
+		</property>
+		<property name="viewResolvers">
+			<list>
+				<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+				<bean
+					class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+					<property name="viewClass"
+						value="org.springframework.web.servlet.view.JstlView" />
+					<property name="prefix" value="/WEB-INF/web/" />
+					<property name="suffix" value=".jsp" />
+				</bean>
+			</list>
+		</property>
+		<property name="defaultViews">
+			<list>
+				<bean
+					class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
+			</list>
+		</property>
+	</bean>
+
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource"
+		p:basename="messages" />
+
+	<!-- 从com.itel.service目录下，将以Service结尾的类注册成为Service Bean -->
+	<context:component-scan base-package="com.itel.service">
+		<context:include-filter type="regex"
+			expression=".*..*Service" />
+	</context:component-scan>
+	<bean id="baseDao" class="com.itel.dao.utils.BaseDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="cacheDao" class="com.itel.dao.utils.CacheDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+	<bean id="jPushClient" class="cn.jpush.api.JPushClient">
+		<constructor-arg>
+			<value>f240582c58cbb8c78bf04055</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>4032a20bba834d022a6efefe</value>
+		</constructor-arg>
+	</bean>
+	<bean id="jPushUtils" class="com.itel.tools.JPushUtils">
+		<property name="client" ref="jPushClient" />
+	</bean>
+
+</beans>

@@ -1,0 +1,15 @@
+package com.itel.dao;
+
+import com.itel.domain.SamPush;
+
+
+/**
+ * 设备推送持久类
+ * @author yangxuan
+ *
+ */
+public interface ISamPushDao {
+	
+	void saveSamPush(SamPush samPush);
+	 
+}

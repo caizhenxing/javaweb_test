@@ -1,0 +1,13 @@
+package com.itel.dao;
+
+import java.util.List;
+
+import com.itel.domain.SamPushMsg;
+
+public interface ISamPushMsgDao {
+	
+	public void saveSamPushMsg(SamPushMsg samPushMsg);
+	
+	public List<SamPushMsg> getSamPushMsgList();
+
+}

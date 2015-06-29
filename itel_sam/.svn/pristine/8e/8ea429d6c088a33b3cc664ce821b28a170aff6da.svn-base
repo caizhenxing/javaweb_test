@@ -1,0 +1,56 @@
+package com.itel.dao.utils;
+
+import java.io.Serializable;
+import java.util.Map;
+
+public class QueryCondition<E> implements Serializable{
+
+	private String sql;
+	private Object[] obj;
+	private Map<String,Object> fields;
+	private Integer pageIndex;
+	private Integer pageMax;
+	private String tableName;
+	
+	public String getTableName() {
+		return tableName;
+	}
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+	}
+	public String getSql() {
+		return sql;
+	}
+	public void setSql(String sql) {
+		this.sql = sql;
+	}
+ 
+	public Object[] getObj() {
+		return obj;
+	}
+	public void setObj(Object[] obj) {
+		this.obj = obj;
+	}
+	public Integer getPageIndex() {
+		return pageIndex;
+	}
+	public void setPageIndex(Integer pageIndex) {
+		this.pageIndex = pageIndex;
+	}
+	public Integer getPageMax() {
+		return pageMax;
+	}
+	public void setPageMax(Integer pageMax) {
+		this.pageMax = pageMax;
+	}
+	public Map<String, Object> getFields() {
+		return fields;
+	}
+	public void setFields(Map<String, Object> fields) {
+		this.fields = fields;
+	}
+	 
+ 
+	
+	
+}

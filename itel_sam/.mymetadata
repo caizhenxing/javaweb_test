@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="itel_sam"
+  id="myeclipse.1403249643301"
+  context-root="/itel"
+  j2ee-spec="6.0"
+  archive="itel_sam.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

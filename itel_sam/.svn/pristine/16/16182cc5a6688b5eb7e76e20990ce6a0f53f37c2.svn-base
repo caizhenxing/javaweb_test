@@ -1,0 +1,47 @@
+package com.itel.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.itel.dao.ISamDeviceDao;
+import com.itel.domain.SamDevice;
+import com.itel.service.ISamDeviceService;
+
+@Service
+public class ISamDeviceServiceImpl implements ISamDeviceService {
+	
+	@Autowired
+	private ISamDeviceDao iSamDeviceDao;
+
+	@Override
+	public void saveSamDevice(SamDevice samDevice) {
+		iSamDeviceDao.saveSamDevice(samDevice);
+	}
+
+	@Override
+	public void updateSamDevice(SamDevice samDevice) {
+		iSamDeviceDao.updateSamDevice(samDevice);
+	}
+
+	@Override
+	public void deleteSamDevice(SamDevice samDevice) {
+		iSamDeviceDao.deleteSamDevice(samDevice);
+	}
+
+	@Override
+	public SamDevice querySamDevice(SamDevice samDevice) {
+		return iSamDeviceDao.querySamDevice(samDevice);
+	}
+
+	@Override
+	public SamDevice querySamDeviceById(String id) {
+		return iSamDeviceDao.querySamDeviceById(id);
+	}
+
+	@Override
+	public List<SamDevice> queryAllSamDevice() {
+		return iSamDeviceDao.queryAllSamDevice();
+	}
+
+}

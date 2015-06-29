@@ -1,0 +1,105 @@
+package com.itel.domain;
+
+import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+@Entity
+@Table(name="itel_sam_upgrade")
+public class SamUpgrade implements Serializable{
+	private static final long serialVersionUID = 7680836299861385722L;
+	@Id
+	@Column(name="upgradeId")
+	private String upgradeId;
+	@Column(name="name")
+	private String name;
+	@Transient
+	private String androidurl;
+	@Transient
+	private String iosurl;
+	@Column(name="url")
+	private String url;
+	@Column(name="platform")
+	private String platform;
+	@Column(name="decription")
+	private String decription;
+	@Column(name="required")
+	private String required;
+	@Column(name="pubtime")
+	private String pubtime;
+	@Column(name="version")
+	private String version;
+	public String getUpgradeId() {
+		return upgradeId;
+	}
+	public void setUpgradeId(String upgradeId) {
+		this.upgradeId = upgradeId;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	 
+	public String getAndroidurl() {
+		return androidurl;
+	}
+	public void setAndroidurl(String androidurl) {
+		this.androidurl = androidurl;
+	}
+	public String getIosurl() {
+		return iosurl;
+	}
+	public void setIosurl(String iosurl) {
+		this.iosurl = iosurl;
+	}
+	public String getDecription() {
+		return decription;
+	}
+	public void setDecription(String decription) {
+		this.decription = decription;
+	}
+	 
+	public String getPubtime() {
+		return pubtime;
+	}
+	public void setPubtime(String pubtime) {
+		this.pubtime = pubtime;
+	}
+	public String getVersion() {
+		return version;
+	}
+	public void setVersion(String version) {
+		this.version = version;
+	}
+	public String getRequired() {
+		return required;
+	}
+	public void setRequired(String required) {
+		this.required = required;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	public String getPlatform() {
+		return platform;
+	}
+	public void setPlatform(String platform) {
+		this.platform = platform;
+	}
+	
+	
+	
+
+}

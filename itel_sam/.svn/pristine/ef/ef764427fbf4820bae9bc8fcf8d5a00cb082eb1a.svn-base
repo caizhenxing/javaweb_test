@@ -1,0 +1,442 @@
+package com.sun.test;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import net.sf.json.JSONObject;
+
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpException;
+import org.apache.commons.httpclient.NameValuePair;
+import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.methods.PostMethod;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+public class SamDeviceControllerTest {
+
+	private HttpClient client = null;
+	private GetMethod getMethod = null;
+	private PostMethod postMethod = null;
+	 private final String url = "http://localhost:8080/itel/";
+//	private final String url = "http://192.168.1.88:8080/itel/";
+
+	@Before
+	public void init() {
+		client = new HttpClient();
+	}
+
+	/**
+	 * ����豸
+	 */
+	@Test
+	public void insertSamDevice() {
+		postMethod = new PostMethod(url + "samDeviceController/addDevice");
+		try {
+			postMethod.setRequestHeader("Accept", "application/json");
+			NameValuePair[] list = new NameValuePair[] {
+					new NameValuePair("varPitel", "666777788899911"),// 设备Itel号
+					new NameValuePair("varType", "S"),// 设备类型,后期可能扩展至猫眼
+					new NameValuePair("varTitle", "我是一个很大的中文"),// 设备标题
+					new NameValuePair("varPassWord", "demoname"),// 设备密码
+					new NameValuePair("varUiTel", "0900011") // 用户iTel号
+			};
+			postMethod.addParameters(list);
+			int state = client.executeMethod(postMethod);
+			System.out.println("state:" + state);
+			String result = postMethod.getResponseBodyAsString();
+			System.out.println(result);
+		} catch (HttpException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * 添加已有设备
+	 */
+	@Test
+	public void addExistDevice() {
+		postMethod = new PostMethod(url + "samDeviceController/addExistDevice");
+		try {
+			postMethod.setRequestHeader("Accept", "application/json");
+			NameValuePair[] list = new NameValuePair[] {
+					new NameValuePair("varPitel", "09010011"),// 设备Itel号
+					new NameValuePair("varTitle", "yangxuan"),// 备注名
+					new NameValuePair("varPassWord", "123456"),// 设备Itel密码
+					new NameValuePair("varUiTel", "18627540357") // 当前操作用户iTel号
+			};
+			postMethod.addParameters(list);
+			int state = client.executeMethod(postMethod);
+			System.out.println("state:" + state);
+			String result = postMethod.getResponseBodyAsString();
+			System.out.println(result);
+		} catch (HttpException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * 隐私安全-允许所有人绑定
+	 */
+	@Test
+	public void setAllUserBind() {
+		postMethod = new PostMethod(url + "samDeviceController/setAllUserBind");
+		try {
+			postMethod.setRequestHeader("Accept", "application/json");
+			NameValuePair[] list = new NameValuePair[] {
+					new NameValuePair("varPitel", "09010002"),// 设备Itel号
+					new NameValuePair("userbind", "Y"),// 设备Itel密码
+					new NameValuePair("varUiTel", "13365811177") // 当前操作用户iTel号
+			};
+			postMethod.addParameters(list);
+			int state = client.executeMethod(postMethod);
+			System.out.println("state:" + state);
+			String result = postMethod.getResponseBodyAsString();
+			System.out.println(result);
+		} catch (HttpException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * �޸��豸���޸ı���
+	 */
+	@Test
+	public void updateSamDevice() {
+		postMethod = new PostMethod(url + "samDeviceController/modify");
+		try {
+			postMethod.setRequestHeader("Accept", "application/json");
+			NameValuePair[] list = new NameValuePair[] {
+					new NameValuePair("varPitel", "66asdasd6"),
+					new NameValuePair("varType", "M"),
+					new NameValuePair("varTitle", "demoname"),
+					new NameValuePair("varDeviceId", "demoname"),
+					new NameValuePair("varPassWord", "demoname"),
+					new NameValuePair("varUiTel", "demoname"),
+					new NameValuePair("varRemark", "demoname"),
+					new NameValuePair("flagShare", "N"),
+					new NameValuePair("flagIsDel", "N") };
+			postMethod.addParameters(list);
+			int state = client.executeMethod(postMethod);
+			System.out.println("state:" + state);
+			String result = postMethod.getResponseBodyAsString();
+			System.out.println(result);
+		} catch (HttpException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * �޸��豸����
+	 */
+	@Test
+	public void updateTitle() {
+		postMethod = new PostMethod(url + "samDeviceController/updateTitle");
+		try {
+			postMethod.setRequestHeader("Accept", "application/json");
+			NameValuePair[] list = new NameValuePair[] {
+					new NameValuePair("varPitel", "45651561"),
+					new NameValuePair("varTitle", "我的摄像头1"),
+					new NameValuePair("varUiTel", "1583024801") };
+			postMethod.addParameters(list);
+			int state = client.executeMethod(postMethod);
+			System.out.println("state:" + state);
+			String result = postMethod.getResponseBodyAsString();
+			System.out.println(result);
+		} catch (HttpException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * ���ù�������ͷ����˽��ȫ��
+	 */
+	@Test
+	public void setDeviceShare() {
+		postMethod = new PostMethod(url + "samDeviceController/setDeviceShare");
+		try {
+			postMethod.setRequestHeader("Accept", "application/json");
+			NameValuePair[] list = new NameValuePair[] {
+					new NameValuePair("varPitel", "666"),
+					new NameValuePair("flagShare", "N") };
+			postMethod.addParameters(list);
+			int state = client.executeMethod(postMethod);
+			System.out.println("state:" + state);
+			String result = postMethod.getResponseBodyAsString();
+			System.out.println(result);
+		} catch (HttpException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * 设备列表-解除绑定
+	 */
+	@Test
+	public void deleteSamDevice() {
+		postMethod = new PostMethod(url + "samDeviceController/deleteDevice");
+		try {
+			postMethod.setRequestHeader("Accept", "application/json");
+			NameValuePair[] list = new NameValuePair[] {
+					new NameValuePair("varPitel", "09010011"),
+					new NameValuePair("varUiTel", "18627540357") };
+			postMethod.addParameters(list);
+			int state = client.executeMethod(postMethod);
+			System.out.println("state:" + state);
+			String result = postMethod.getResponseBodyAsString();
+			System.out.println(result);
+		} catch (HttpException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	@Test
+	public void querySamDevice() {
+		postMethod = new PostMethod(url + "samDeviceController/querySamDevice");
+		try {
+			postMethod.setRequestHeader("Accept", "application/json");
+			NameValuePair[] list = new NameValuePair[] {
+					new NameValuePair("varPitel", "222222"),
+					new NameValuePair("varType", "dem2222"),
+					new NameValuePair("varTitle", "demoname"),
+					new NameValuePair("varDeviceId", "demoname"),
+					new NameValuePair("varPassWord", "demoname"),
+					new NameValuePair("varUiTel", "demoname"),
+					new NameValuePair("varRemark", "demoname"),
+					new NameValuePair("flagShare", "N"),
+					new NameValuePair("flagIsDel", "N") };
+			postMethod.addParameters(list);
+			int state = client.executeMethod(postMethod);
+			System.out.println("state:" + state);
+			String result = postMethod.getResponseBodyAsString();
+			System.out.println(result);
+		} catch (HttpException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	@Test
+	public void querySamDeviceById() throws Exception {
+		getMethod = new GetMethod(url
+				+ "samDeviceController/querySamDeviceById/855");
+		getMethod.setRequestHeader("Accept", "application/json");
+		/*
+		 * NameValuePair[] list = new NameValuePair[] { new
+		 * NameValuePair("start", "0"), new NameValuePair("limit", "10") };
+		 * getMethod.setQueryString(list);
+		 */
+		client.executeMethod(getMethod);
+		byte[] res = getMethod.getResponseBody();
+		System.out.println(new String(res, "UTF-8"));
+	}
+
+	@Test
+	public void queryAllSamDevice() throws Exception {
+		getMethod = new GetMethod(url + "samDeviceController/queryAllSamDevice");
+		getMethod.setRequestHeader("Accept", "application/json");
+		/*
+		 * NameValuePair[] list = new NameValuePair[] { new
+		 * NameValuePair("start", "0"), new NameValuePair("limit", "10") };
+		 * getMethod.setQueryString(list);
+		 */
+		client.executeMethod(getMethod);
+		byte[] res = getMethod.getResponseBody();
+		System.out.println(new String(res, "UTF-8"));
+	}
+
+	@Test
+	public void queryForWhereOr() {
+		getMethod = new GetMethod(url + "login/queryForWhereOr");
+		try {
+			getMethod.setRequestHeader("Accept", "application/json");
+			NameValuePair[] list = new NameValuePair[] {
+					new NameValuePair("pageIndex", "0"),
+					new NameValuePair("pageMax", "2"),
+					new NameValuePair("fileds[varPitel]", "0901001") };
+			getMethod.setQueryString(list);
+			int state = client.executeMethod(getMethod);
+			System.out.println("state:" + state);
+			String result = getMethod.getResponseBodyAsString();
+			System.out.println(result);
+		} catch (HttpException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * ��������ͷ��ѯ
+	 */
+	@Test
+	public void queryShareDevicce() {
+		getMethod = new GetMethod(url + "samDeviceController/queryForWhereAnd");
+		try {
+			getMethod.setRequestHeader("Accept", "application/json");
+			NameValuePair[] list = new NameValuePair[] {
+					new NameValuePair("pageIndex", "0"),
+					new NameValuePair("pageMax", "20"),
+					new NameValuePair("fields[flagShare]", "Y"),
+					new NameValuePair("fields[flagIsDel]", "N") };
+			getMethod.setQueryString(list);
+			int state = client.executeMethod(getMethod);
+			System.out.println("state:" + state);
+			String result = getMethod.getResponseBodyAsString();
+			System.out.println(result);
+		} catch (HttpException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * �ҵ�����ͷ��ѯ(�������û���Ȩ�豸)
+	 */
+	@Test
+	public void queryOwerDevicce() {
+		getMethod = new GetMethod(url + "samDeviceController/getOwerDevice");
+		try {
+			getMethod.setRequestHeader("Accept", "application/json");
+			NameValuePair[] list = new NameValuePair[] {
+					new NameValuePair("pageIndex", "0"),
+					new NameValuePair("pageMax", "20"),
+					new NameValuePair("fields[varUiTel]", "13826328333") };
+			getMethod.setQueryString(list);
+			int state = client.executeMethod(getMethod);
+			System.out.println("state:" + state);
+			String result = getMethod.getResponseBodyAsString();
+			System.out.println(result);
+		} catch (HttpException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void sendMail() {
+		for (int i = 0; i < 100; i++) {
+			getMethod = new GetMethod(
+					"http://192.168.1.9:7090/CloudCommunity/user/sendEmailCode.json?itel=222222&toEmail=381766286@qq.com");
+			try {
+				getMethod.setRequestHeader("Accept", "application/json");
+				NameValuePair[] list = new NameValuePair[] {
+						new NameValuePair("pageIndex", "0"),
+						new NameValuePair("pageMax", "20"),
+						new NameValuePair("fields[varUiTel]", "158302480") };
+				getMethod.setQueryString(list);
+				int state = client.executeMethod(getMethod);
+				System.out.println("state:" + state);
+				String result = getMethod.getResponseBodyAsString();
+				System.out.println(result);
+			} catch (HttpException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 * 校验itel是否在本系统注册
+	 */
+	@Test
+	public void querySamDeviceUitel() {
+		postMethod = new PostMethod(url + "samDeviceController/querySamDeviceUitel");
+		try {
+			postMethod.setRequestHeader("Accept", "application/json");
+			NameValuePair[] list = new NameValuePair[] {
+					new NameValuePair("varUiTel", "09010003")};
+			postMethod.addParameters(list);
+			int state = client.executeMethod(postMethod);
+			System.out.println("state:" + state);
+			String result = postMethod.getResponseBodyAsString();
+			System.out.println(result);
+		} catch (HttpException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Test
+	public void queryAllDevicce() {
+		getMethod = new GetMethod(url + "samDeviceController/queryForWhereAnd");
+		try {
+			getMethod.setRequestHeader("Accept", "application/json");
+			NameValuePair[] list = new NameValuePair[] {
+					new NameValuePair("pageIndex", "0"),
+					new NameValuePair("pageMax", "100"),
+					new NameValuePair("fields[flagIsDel]", "N") };
+			getMethod.setQueryString(list);
+			int state = client.executeMethod(getMethod);
+			System.out.println("state:" + state);
+			String result = getMethod.getResponseBodyAsString();
+			System.out.println(result);
+		} catch (HttpException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

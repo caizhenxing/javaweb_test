@@ -1,0 +1,18 @@
+package com.itel.dao.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.itel.dao.ISamNoticDao;
+import com.itel.dao.utils.BaseDao;
+import com.itel.domain.SamNotic;
+@Repository
+public class ISamNoticDaoImpl implements ISamNoticDao{
+	@Autowired
+	private BaseDao baseDao;
+	@Override
+	public void insertSamNotic(SamNotic samNotic) {
+		baseDao.save(samNotic);
+	}
+
+}

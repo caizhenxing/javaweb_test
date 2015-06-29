@@ -1,0 +1,180 @@
+package com.itel.service.impl;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.UUID;
+
+import oracle.net.aso.i;
+
+import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.itel.dao.ISamAuthorDao;
+import com.itel.dao.ISamDeviceDao;
+import com.itel.dao.impl.ISamDeviceDaoImpl;
+import com.itel.data.GridResult;
+import com.itel.domain.SamAuthor;
+import com.itel.domain.SamDevice;
+import com.itel.service.ISamDeviceService;
+
+@Service
+public class ISamDeviceServiceImpl implements ISamDeviceService {
+	private final Logger log = Logger.getLogger(ISamDeviceServiceImpl.class);
+
+	@Autowired
+	private ISamDeviceDao iSamDeviceDao;
+	@Autowired
+	private ISamAuthorDao iSamAuthorDao;
+	
+	private boolean isExist(SamDevice samDevice){
+		SamDevice sd = iSamDeviceDao.getSamDeviceById(samDevice);
+		if (sd == null)
+			return false;
+		return true;
+	}
+
+	@Override
+	public GridResult saveSamDevice(SamDevice samDevice) {
+		boolean isExist = isExist(samDevice);
+		GridResult gridResult = new GridResult();
+		if (!isExist) {
+			try {
+				iSamDeviceDao.saveSamDevice(samDevice);
+				log.debug("添加设备成功");
+				gridResult.setSuccess(true);
+				gridResult.setMsg("添加设备成功");
+			} catch (Exception e) {
+				log.debug("添加设备失败");
+				gridResult.setSuccess(true);
+				gridResult.setMsg("系统异常");
+
+			}
+		} else {
+			gridResult.setSuccess(false);
+			gridResult.setMsg("对不起,该iTel号已注册");
+			log.debug("对不起,该iTel号已注册");
+		}
+		return gridResult;
+	}
+
+	@Override
+	public void updateSamDevice(SamDevice samDevice) {
+		iSamDeviceDao.updateSamDevice(samDevice);
+	}
+
+	@Override
+	public GridResult deleteSamDevice(SamDevice samDevice) {
+		boolean isExist = isExist(samDevice);
+		GridResult gridResult = new GridResult();
+		if (isExist) {
+			boolean result = iSamDeviceDao.deleteSamDevice(samDevice);
+			if(result){
+				gridResult.setSuccess(true);
+			}else{
+				gridResult.setMsg("操作失败");
+				gridResult.setSuccess(false);
+			}
+			return gridResult;
+
+		} else {
+			gridResult.setSuccess(false);
+			gridResult.setMsg("对不起,该设备不存在");
+		}
+		return gridResult;
+	}
+	
+	@Override
+	public GridResult saveExitsDevice(SamDevice samDevice) {
+		SamDevice sd = iSamDeviceDao.getSamDeviceById(samDevice);
+		GridResult gridResult = new GridResult();
+		if(sd!=null){
+			String userBind = sd.getUserbind();
+			if("N".equals(userBind)){
+				gridResult.setSuccess(false);
+				gridResult.setMsg("该摄像头不允许所有人绑定,不能添加");
+				log.debug("该摄像头不允许所有人绑定,不能添加");
+				return gridResult;
+			}
+			String isdel = sd.getFlagIsDel();
+			if ("Y".equals(isdel)) {
+				gridResult.setSuccess(false);
+				gridResult.setMsg("该摄像头已已损坏,不能添加");
+				log.debug("该摄像头已已损坏,不能添加");
+				return gridResult;
+			}
+			String share = sd.getFlagShare();
+			if ("Y".equals(share)) {
+				gridResult.setSuccess(false);
+				gridResult.setMsg("该摄像头为公开摄像头,不能添加");
+				log.debug("该摄像头为公开摄像头,不能添加");
+				return gridResult;
+			}
+			String password = sd.getVarPassWord();
+			if (!password.equals(samDevice.getVarPassWord())) {
+				gridResult.setSuccess(false);
+				gridResult.setMsg("对不起,您输入的密码错误");
+				log.debug("对不起,您输入的密码错误");
+				return gridResult;
+			} else {
+				String uiTel = sd.getVarUiTel();
+				if (uiTel.equals(samDevice.getVarUiTel())) {
+					gridResult.setSuccess(false);
+					gridResult.setMsg("对不起,该摄像头为您自己的设备,已在我的摄像头列表");
+					log.debug("对不起,该摄像头为您自己的设备,已在我的摄像头列表");
+					return gridResult;
+				}
+			}
+		}else{
+			gridResult.setSuccess(false);
+			gridResult.setMsg("对不起,该设备未绑定iTel号");
+			log.debug("对不起,该设备未绑定iTel号");
+			return gridResult;
+		}
+		SamAuthor samAuthor = new SamAuthor();
+		samAuthor.setUid(UUID.randomUUID().toString());
+		samAuthor.setVarPitel(samDevice.getVarPitel());
+		samAuthor.setDeviceName(samDevice.getVarTitle());
+		samAuthor.setVarUitel(samDevice.getVarUiTel());
+		samAuthor.setActive("N");
+		if(iSamAuthorDao.getSamAuthorByPitel2Uitel(samAuthor)!=null){
+			gridResult.setSuccess(false);
+			gridResult.setMsg("对不起,该设备已在我的摄像头列表");
+			log.debug("对不起,该设备已在我的摄像头列表");
+		}else{
+			try {
+				iSamAuthorDao.saveSamAuthor(samAuthor);
+				gridResult.setSuccess(true);
+				log.debug("save success");
+				gridResult.setMsg("save success");
+			} catch (Exception e) {
+				gridResult.setSuccess(false);
+				log.debug("success failure");
+				gridResult.setMsg("success failure");
+				return gridResult;
+			}
+		}
+		return gridResult;
+	}
+
+	@Override
+	public SamDevice querySamDevice(SamDevice samDevice) {
+		return iSamDeviceDao.querySamDevice(samDevice);
+	}
+
+	@Override
+	public SamDevice querySamDeviceById(String id) {
+		return iSamDeviceDao.querySamDeviceById(id);
+	}
+
+	@Override
+	public List<SamDevice> queryAllSamDevice() {
+		return iSamDeviceDao.queryAllSamDevice();
+	}
+
+	
+
+}

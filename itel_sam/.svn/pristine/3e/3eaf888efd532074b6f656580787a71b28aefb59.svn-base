@@ -1,0 +1,60 @@
+package com.itel.tools;
+
+import org.junit.Before;
+import org.junit.Test;
+/*
+import cn.jpush.api.JPushClient;
+import cn.jpush.api.push.PushResult;
+import cn.jpush.api.push.model.Message;
+import cn.jpush.api.push.model.Platform;
+import cn.jpush.api.push.model.PushPayload;
+import cn.jpush.api.push.model.PushPayload.Builder;
+import cn.jpush.api.push.model.audience.Audience;
+import cn.jpush.api.push.model.notification.Notification;*/
+
+public class Main {/*
+	
+	private JPushClient client;
+	private final String masterSecret = "f240582c58cbb8c78bf04055";
+	private final String appKey = "4032a20bba834d022a6efefe";
+	
+	
+	public Main(){
+		client = new JPushClient(masterSecret, appKey);
+	}
+	
+	 
+	public void sendMsg(String str ){
+		PushPayload p = PushPayload.alertAll(str);
+//		PushPayload p = PushPayload.messageAll(str);
+		PushResult result = client.sendPush(p);
+		
+	}
+	
+	public void sendMsgByPerson(String regId,String msg ){
+//		 Builder builder = PushPayload.newBuilder();
+		 Audience audience = Audience.registrationId(regId);
+//		 builder.setAudience(audience);
+		 PushPayload.Builder p = PushPayload.newBuilder();
+		 p.setAudience(audience);
+		 p.setPlatform(Platform.android());
+		 Notification notification = Notification.alert(msg);
+		 p.setNotification(notification);
+		 PushPayload pp =  p.build();
+		 PushResult result = client.sendPush(pp);
+		 
+		 System.out.println(result.isResultOK());
+	}
+	
+	public static void main(String[] args){
+		long start = System.currentTimeMillis();
+		Main main = new Main();
+//		main.sendMsg("this is Java Server send msg;");
+		main.sendMsgByPerson("0701dccb73b","sendMsgByPerson");
+		long end = System.currentTimeMillis();
+		System.out.println(end-start +"ms");
+	}
+	
+	
+
+*/}

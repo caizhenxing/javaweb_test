@@ -1,0 +1,376 @@
+function UpgradePanel(o) {
+	var onSubmit = function() {
+		Ext.Ajax.request({
+			url : Ext.ctx + '/samNoticController',
+			method : 'POST',
+			defaultHeaders : {
+				'Accept' : 'application/json'
+			},
+			success : Ext.ux.AjaxUtil.successHandler.createSequence(
+					function(r) {
+						noticstore.reload();
+						window.hide();
+					}, this),
+			failure : Ext.ux.AjaxUtil.failureHandler,
+			params : function() {
+				var params = {};
+				form.items.each(function(item, i) {
+							params[item.name] = item.getValue();
+						}, this);
+				return params;
+			}.createDelegate(this)()
+		});
+	};
+	
+	var deleteSubmit = function() {
+		Ext.Ajax.request({
+			url : Ext.ctx + '/samNoticController/deleteNotics',
+			method : 'POST',
+			defaultHeaders : {
+				'Accept' : 'application/json'
+			},
+			success : Ext.ux.AjaxUtil.successHandler.createSequence(
+					function(r) {
+						noticstore.reload();
+						window.hide();
+					}, this),
+			failure : Ext.ux.AjaxUtil.failureHandler,
+			params : function() {
+				var params = {};
+				var ids = Ext.getCmp('noticGridId').getSelectionModel().getSelections();
+					alert(ids);
+				return params;
+			}.createDelegate(this)()
+		});
+	};
+	var Record = Ext.data.Record.create( [ {
+		name : 'upgradeId',
+		type : 'string'
+	}, {
+		name : 'name',
+		type : 'string'
+	}, {
+		name : 'url',
+		type : 'string'
+	}, {
+		name : 'platform',
+		type : 'string'
+	}, {
+		name : 'decription',
+		type : 'string'
+	}, {
+		name : 'required',
+		type : 'string'
+	}, {
+		name : 'pubtime',
+		type : 'string'
+	}, {
+		name : 'version',
+		type : 'string'
+	} ]);
+
+	var connection = new Ext.data.Connection( {
+		url : Ext.ctx + '/samUpgradeController/getVersionAll',
+		method : 'GET',
+		defaultHeaders : {
+			'Accept' : 'application/json'
+		},
+		timeout : 10000
+	});
+	connection.on('requestexception', Ext.ux.AjaxUtil.failureHandler, this);
+
+	var noticstore = new Ext.data.JsonStore( {
+		root : 'results',
+		totalProperty : 'totalCount',
+//		remoteSort : true,
+		fields : Record,
+		sortInfo : { field : 'pubtime', direction : 'DESC' },
+						 
+		proxy : new Ext.data.HttpProxy(connection)
+	});
+	noticstore.load();
+
+	var fp = new Ext.FormPanel(
+			{
+				id:'uploadForm',
+				fileUpload : true,
+				headerCfg:{
+					'Accept' : 'application/json'
+				},
+				width : 600,
+				frame : true,
+				labelWidth : 90,
+				defaults : {
+					xtype:'textfield',
+					anchor : '95%',
+					msgTarget : 'side',
+					
+				},
+				items : [ {
+					fieldLabel : 'Name',
+					name:'name'
+
+				}, {
+		            xtype: 'radiogroup',
+		            name:'platform',
+		            fieldLabel: 'PlatForm',
+		            items: [
+		                {boxLabel: 'Android', name: 'platform', inputValue:'Android'},
+		                {boxLabel: 'IOS', name: 'platform', inputValue:'IOS'}
+		            ],
+		            listeners:{
+						'change':function(e,checked){
+							var platForm = checked.inputValue;
+							if(platForm=='Android'){
+								Ext.getCmp('androidapk').setDisabled(false);
+								Ext.getCmp('iosUrlInput').setDisabled(true);
+								Ext.getCmp('iosUrlInput').setValue('');
+							}else{
+								Ext.getCmp('androidapk').setDisabled(true);
+								Ext.getCmp('iosUrlInput').setDisabled(false);
+							}
+						}
+					}
+		        }, {
+		            xtype: 'radiogroup',
+		            name:'required',
+		            fieldLabel: 'Required',
+		            items: [
+		                {boxLabel: 'YES', name: 'required', inputValue:'Y'},
+		                {boxLabel: 'NO', name: 'required', inputValue:'N'}
+		            ]
+		        },{
+					xtype : 'fileuploadfield',
+					id:'androidapk',
+					emptyText : '请选择apk文件',
+					fieldLabel : 'APK(Android)',
+					name : 'file',
+					buttonText : '浏览'/*
+										 * , buttonCfg: { iconCls: 'upload-icon' }
+										 */
+				},{
+					fieldLabel : 'IOS URL',
+					name:'iosurl',
+					id:'iosUrlInput'
+				},{
+					fieldLabel : 'Version',
+					name:'version'
+				} ,{
+					xtype:'textarea',
+					name:'decription',
+					fieldLabel : 'Decription'
+				}  ],
+
+				buttons : [
+						{
+							text : '保存',
+							handler : function() {
+							var platForm = fp.getForm().findField('platform').getValue();
+							if(platForm=='Android'){
+								var fileName = fp.getForm().findField('file')
+										.getValue();
+								var objtype = fileName.substring(
+										fileName.lastIndexOf("."))
+										.toLowerCase();
+								if (objtype != ".apk") {
+									Ext.Msg.alert('错误',
+											"您导入的文件格式不对，请导入正确的apk文件!");
+									return;
+								}
+							}
+								if (fp.getForm().isValid()) {
+									/*Ext.Ajax.request({
+										url : Ext.ctx + '/samUpgradeController/pubVersion',
+										method : 'POST',
+										isUpload : true,  
+										form : 'uploadForm',  
+										defaultHeaders : {
+											'Accept' : 'application/json'
+										},
+										success : Ext.ux.AjaxUtil.successHandler.createSequence(
+												function(r) {
+													noticstore.reload();
+													window.hide();
+												}, this),
+										failure : Ext.ux.AjaxUtil.failureHandler
+									});*/
+								
+									fp.getForm().submit(
+											{
+												headers : {
+													'Accept' : 'application/json'
+												},
+												url : '/itel/samUpgradeController/pubVersion',
+												waitMsg : '正在上传...',
+												success : function(fp,o) {
+													Ext.MessageBox
+															.alert(
+																	'恭喜您',
+																	'上传 "' + o.result.file + '" 成功！');
+												},
+												failure : function(fp,o) {
+													Ext.MessageBox
+															.alert(
+																	'恭喜您',
+																	'上传 "' + o.result.file + '" 失败！');
+												}
+											});
+								};
+						}}, {
+							text : '重置',
+							handler : function() {
+								fp.getForm().reset();
+							}
+						} ]
+			});
+
+	var window = new Ext.Window({
+		title : '版本发布',
+		closeAction:'hide',
+		items:[fp]
+		
+	});
+	
+	
+	var iosfp = new Ext.FormPanel(
+			{
+				id:'iosfpid',
+				url:'samUpgradeController/pubVersion/pubVersionByIOS',
+				headerCfg:{
+					'Accept' : 'application/json'
+				},
+				width : 600,
+				frame : true,
+				labelWidth : 90,
+				defaults : {
+					xtype:'textfield',
+					anchor : '95%',
+					msgTarget : 'side',
+					
+				},
+				items : [ {
+					fieldLabel : 'Name',
+					name:'name'
+
+				}, {
+		            xtype: 'radiogroup',
+		            name:'required',
+		            fieldLabel: 'Required',
+		            items: [
+		                {boxLabel: 'YES', name: 'required', inputValue:'Y'},
+		                {boxLabel: 'NO', name: 'required', inputValue:'N'}
+		            ]
+		        },{
+					fieldLabel : 'IOS URL',
+					name:'iosurl',
+					id:'iosUrlInput'
+				},{
+					fieldLabel : 'Version',
+					name:'version'
+				} ,{
+					xtype:'textarea',
+					name:'decription',
+					fieldLabel : 'Decription'
+				}  ],
+
+				buttons : [
+						{
+							text : '保存',
+							handler : function() { 
+								iosfp.getForm().submit(
+										{
+											success : function(fp,
+													o) {
+												Ext.MessageBox.alert('发布成功');
+											}
+										});
+						}}, {
+							text : '重置',
+							handler : function() {
+							iosfp.getForm().reset();
+							}
+						} ]
+			});
+
+	var ioswindow = new Ext.Window({
+		title : 'IOS版本发布',
+		closeAction:'hide',
+		items:[iosfp]
+		
+	});
+	var sm = new Ext.grid.CheckboxSelectionModel();// 设置多选
+	var grid = new Ext.grid.GridPanel( {
+		id:'noticGridId',
+		store : noticstore,
+		tbar : [ new Ext.Button( {
+			text : 'Android版本发布',
+			listeners : {
+				'click' : function() {
+					window.show();
+				}
+			}
+		})/*, '-', new Ext.Button( {
+			text : 'IOS版本发布',
+			listeners:{
+				'click':function(){
+					ioswindow.show();
+				}
+			}
+		})*/ ],
+		sm:sm,
+		columns : [new Ext.grid.RowNumberer(),
+		           sm,{
+			id : 'title',
+			header : '版本名称',
+			width : 160,
+			sortable : true,
+			dataIndex : 'name'
+		}, {
+			header : '下载地址',
+			width : 75,
+			sortable : true,
+			// renderer : 'usMoney',
+			dataIndex : 'url'
+		}, {
+			header : '设备平台',
+			width : 75,
+			sortable : true,
+			dataIndex : 'platform'
+		}, {
+			header : '描述',
+			width : 75,
+			sortable : true,
+			dataIndex : 'decription'
+		}, {
+			header : '是否硬发布',
+			width : 75,
+			sortable : true,
+			dataIndex : 'required'
+		}, {
+			header : '发布时间',
+			width : 85,
+			sortable : true,
+			dataIndex : 'pubtime'
+		}, {
+			header : '版本号',
+			width : 85,
+			sortable : true,
+			dataIndex : 'version'
+		} ],
+		viewConfig : {
+			forceFit : true
+		},
+		stripeRows : true,
+		autoExpandColumn : 'company',
+		height : 650,
+		stateful : true,
+		stateId : 'grid'
+	});
+	
+	
+	
+	
+
+	return grid;
+
+}

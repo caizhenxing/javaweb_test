@@ -1,0 +1,19 @@
+package com.sun.test;
+
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.methods.PostMethod;
+
+public class CommonUtils {
+	protected HttpClient client = null;
+	protected GetMethod getMethod = null;
+	protected PostMethod postMethod = null;
+	protected String samurl = "http://localhost:8080/itel/";
+//	protected String samurl = "http://192.168.1.88:8080/itel/";
+//	protected String samurl = "http://121.199.46.52:8085/itel/";
+	
+	public CommonUtils(){
+		client = new HttpClient();
+	}
+
+}

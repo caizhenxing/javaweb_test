@@ -1,0 +1,10 @@
+package com.itel.service;
+
+import org.springframework.stereotype.Service;
+
+import com.itel.domain.SamNotic;
+
+public interface ISamNoticService {
+	public void insertSamNotic(SamNotic samNotic);
+
+}

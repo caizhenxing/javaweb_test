@@ -1,0 +1,66 @@
+package com.itel.dao.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.itel.dao.ISamDeviceDao;
+import com.itel.dao.utils.BaseDao;
+import com.itel.domain.SamDevice;
+
+
+@Repository
+public class ISamDeviceDaoImpl implements ISamDeviceDao{
+	
+	@Autowired
+	private BaseDao baseDao;
+	@Override
+	public void saveSamDevice(SamDevice samDevice) {
+		baseDao.save(samDevice);
+	}
+
+	@Override
+	public void updateSamDevice(SamDevice samDevice) {
+		baseDao.saveOrUpdate(samDevice);
+	}
+
+	@Override
+	public boolean deleteSamDevice(SamDevice samDevice) {
+		SamDevice queryDevice = getSamDeviceById(samDevice);
+		String sql = "";
+		if (queryDevice.getVarUiTel().equals(samDevice.getVarUiTel())) {
+			sql = " delete from  itel_sam_device where var_pitel=? and var_uitel=?";
+		} else {
+			sql = " delete from itel_sam_author where var_pitel=? and var_uitel=?";
+		}
+		int state = this.baseDao.execBySql(sql, new Object[] {
+				 samDevice.getVarPitel(),samDevice.getVarUiTel() });
+		if(state==0)
+			return false;
+		return true;
+	}
+
+	@Override
+	public SamDevice querySamDevice(SamDevice samDevice) {
+		return (SamDevice) baseDao.findByExample(samDevice);
+	}
+
+	@Override
+	public SamDevice querySamDeviceById(String id) {
+		return (SamDevice) baseDao.findById(SamDevice.class, id);
+	}
+
+	@Override
+	public List<SamDevice> queryAllSamDevice() {
+		return baseDao.findAll("SamDevice");
+	}
+
+	@Override
+	public SamDevice getSamDeviceById(SamDevice samDevice) {
+		SamDevice queryDevice = (SamDevice) this.baseDao.findById(
+				SamDevice.class, samDevice.getVarPitel());
+		return queryDevice;
+	}
+
+}

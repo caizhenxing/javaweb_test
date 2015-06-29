@@ -1,0 +1,20 @@
+package com.itel.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.itel.dao.ISamNoticDao;
+import com.itel.domain.SamNotic;
+import com.itel.service.ISamNoticService;
+@Service
+public class ISamNoticServiceImpl implements ISamNoticService{
+	
+	@Autowired
+	private ISamNoticDao iSamNoticDao;
+
+	@Override
+	public void insertSamNotic(SamNotic samNotic) {
+		iSamNoticDao.insertSamNotic(samNotic);
+	}
+
+}

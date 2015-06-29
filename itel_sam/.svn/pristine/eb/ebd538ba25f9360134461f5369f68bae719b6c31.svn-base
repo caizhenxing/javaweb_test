@@ -1,0 +1,25 @@
+mysql.jdbc.driverClassName=com.mysql.jdbc.Driver
+mysql.jdbc.url=jdbc:mysql://localhost:3306/sam?useUnicode=true&characterEncoding=utf8
+mysql.jdbc.username=root
+mysql.jdbc.password=
+mysql.jdbc.preferredTestQuery=select NOW() from dual
+mysql.jdbc.minPoolSize=3
+mysql.jdbc.maxPoolSize=50
+mysql.jdbc.maxIdleTime=120
+mysql.jdbc.acquireIncrement=10
+mysql.jdbc.maxStatements=100
+mysql.jdbc.maxStatementsPerConnection=3
+mysql.jdbc.initialPoolSize=5
+mysql.jdbc.idleConnectionTestPeriod=600
+mysql.jdbc.breakAfterAcquireFailure=false
+mysql.jdbc.checkoutTimeout=1000
+mysql.jdbc.testConnectionOnCheckin=true
+mysql.jdbc.autoCommitOnClose=false
+mysql.jdbc.unreturnedConnectionTimeout=300
+mysql.jdbc.debugUnreturnedConnectionStackTraces=true
+
+#mysql.jdbc.validationQuery=SELECT 1
+#mysql.jdbc.testWhileIdle=true
+#mysql.jdbc.timeBetweenEvictionRunsMillis=3600000
+#mysql.jdbc.minEvictableIdleTimeMillis=18000000
+#mysql.jdbc.testOnBorrow=true

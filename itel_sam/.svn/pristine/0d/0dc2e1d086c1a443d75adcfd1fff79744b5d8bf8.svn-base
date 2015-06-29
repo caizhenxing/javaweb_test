@@ -1,0 +1,135 @@
+package com.itel.service.impl;
+
+import java.util.List;
+import java.util.UUID;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.itel.dao.ISamAuthorDao;
+import com.itel.dao.ISamDeviceDao;
+import com.itel.data.GridResult;
+import com.itel.domain.SamAuthor;
+import com.itel.domain.SamDevice;
+import com.itel.service.ISamAuthorService;
+
+/**
+ * 监控授权服务接口实现类
+ * @author Administrator
+ *
+ */
+@Service
+public class ISamAuthorServiceImpl implements ISamAuthorService {
+	private final Logger log = Logger.getLogger(ISamAuthorServiceImpl.class);
+	@Autowired
+	private ISamAuthorDao iSamAuthorDao;
+	@Autowired
+	private ISamDeviceDao iSamDeviceDao;
+
+	/**
+	 * 通过设备号获取授权信息
+	 */
+	@Override
+	public GridResult<SamAuthor> getAuthorListByPitel(SamAuthor samAuthor) {
+		samAuthor.setActive("Y");
+		List<SamAuthor> list = iSamAuthorDao.getAuthorListByPitel(samAuthor);
+		return new GridResult<SamAuthor>(list, list.size());
+	}
+	
+	/**
+	 * 保存授权信息
+	 */
+	@Override
+	public GridResult saveSamAuthor(SamAuthor samAuthor) {
+		/*SamDevice samDevice = new SamDevice();
+		samDevice.setVarUiTel(samAuthor.getVarUitel());
+		boolean validateItel = vilidateItel(samDevice);*/
+		GridResult gridResult = new GridResult();
+//		if(validateItel){
+			SamAuthor sa = iSamAuthorDao.getSamAuthorByPitel2Uitel(samAuthor);
+			if (sa != null) {
+				if ("N".equals(sa.getActive())) {
+					sa.setBackName(samAuthor.getBackName());
+					sa.setActive("Y");
+					try {
+						iSamAuthorDao.modifySamAuthorActive(sa);
+						gridResult.setSuccess(true);
+						return gridResult;
+					} catch (Exception e) {
+						gridResult.setMsg("对不起,系统异常");
+						log.debug("对不起,系统异常");
+						gridResult.setSuccess(false);
+						return gridResult;
+					}
+
+				}
+				gridResult.setMsg("对不起,该设备与iTel号以存在相关绑定");
+				log.debug("对不起,该设备与iTel号以存在相关绑定");
+				gridResult.setSuccess(false);
+			} else {
+				try {
+					samAuthor.setActive("Y");
+					samAuthor.setUid(UUID.randomUUID().toString());
+					iSamAuthorDao.saveSamAuthor(samAuthor);
+					gridResult.setSuccess(true);
+					return gridResult;
+				} catch (Exception e) {
+					gridResult.setMsg("对不起,系统异常");
+					log.debug("对不起,系统异常");
+					gridResult.setSuccess(false);
+					return gridResult;
+				}
+			}
+			/*}else{
+			gridResult.setMsg("对不起,您输入的iTel尚未注册本系统");
+			log.debug("对不起,您输入的iTel尚未注册本系统");
+			gridResult.setSuccess(false);
+			return gridResult;
+		}*/
+		
+		return gridResult;
+	}
+	
+	/**
+	 * 更新授权信息
+	 */
+	@Override
+	public GridResult updateSamAuthor(SamAuthor samAuthor) {
+		GridResult gridResult = new GridResult();
+		try {
+			iSamAuthorDao.updateSamAuthor(samAuthor);
+			gridResult.setSuccess(true);
+		} catch (Exception e) {
+			gridResult.setMsg("对不起,系统异常");
+			gridResult.setSuccess(false);
+		}
+		return gridResult;
+	}
+	
+	/**
+	 * 删除授权信息
+	 */
+	@Override
+	public GridResult deleteSamAuthor(SamAuthor samAuthor) {
+		GridResult gridResult = new GridResult();
+		try {
+			iSamAuthorDao.deleteSamAuthor(samAuthor);
+			gridResult.setSuccess(true);
+		} catch (Exception e) {
+			gridResult.setMsg("对不起,系统异常");
+			gridResult.setSuccess(false);
+		}
+		return gridResult;
+	}
+	
+	/**
+	 * 校验itel号合法性
+	 * @param samDevice
+	 * @return
+	 */
+	public boolean vilidateItel(SamDevice samDevice){
+		SamDevice queryDevice = iSamDeviceDao.querySamDeviceUitel(samDevice);
+		if(queryDevice!=null)
+			return true;
+		return false;
+	}
+}

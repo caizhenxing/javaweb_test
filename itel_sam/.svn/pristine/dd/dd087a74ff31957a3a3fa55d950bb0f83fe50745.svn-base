@@ -1,0 +1,48 @@
+package com.itel.domain;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name="itel_sam_helpcenter")
+public class SamHelpCenter implements Serializable{
+	@Id
+	@Column(name="uid")
+	private int uid;
+	@Column(name="title")
+	private String title;
+	@Column(name="content")
+	private String content;
+	@Column(name="version")
+	private String version;
+	public int getUid() {
+		return uid;
+	}
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public String getVersion() {
+		return version;
+	}
+	public void setVersion(String version) {
+		this.version = version;
+	}
+	
+	
+
+}

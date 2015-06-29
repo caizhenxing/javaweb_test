@@ -1,0 +1,20 @@
+package com.itel.web.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.itel.domain.SamDevice;
+import com.itel.tools.ControllerSupport;
+
+
+@Controller
+@RequestMapping("/login")
+public class LoginController extends ControllerSupport<SamDevice>{
+	
+	@RequestMapping(method=RequestMethod.GET)
+	public String redirectLogin(){
+		return "main";
+	}
+
+}

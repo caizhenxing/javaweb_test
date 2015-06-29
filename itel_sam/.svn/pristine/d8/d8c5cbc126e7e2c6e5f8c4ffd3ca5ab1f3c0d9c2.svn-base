@@ -1,0 +1,18 @@
+input, textarea, select, .x-list-item-label {
+	font-size: 16px;
+}
+
+.x-form .x-scroll-container > .x-inner {
+	padding: 5px;
+}
+
+.x-list-normal .x-list-item.x-item-selected .x-list-item-label {
+	border-top-color: #CCCCCC;
+	border-bottom-color: #AAAAAA;
+}
+
+.x-list .x-list-item.x-item-selected .x-list-item-label {
+	background-color: #CCCCCC;
+	background-image: -webkit-linear-gradient(top, #AAAAAA,#AFAFAF 10%,#BFBFBF 65%,#CCCCCC);
+	background-image: linear-gradient(top, #AAAAAA,#AFAFAF 10%,#BFBFBF 65%,#CCCCCC);
+}
