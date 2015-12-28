@@ -39,10 +39,6 @@
 			<br>
 			<br>
 			<br>
-			<a href="hecaiyun://launch">拉起和彩云</a>
-			<br>
-			<a href="hecaiyun://launch/wap/halbum">拉起和拍</a>
-			<br>
 		</center>
 	</body>
 </html>
